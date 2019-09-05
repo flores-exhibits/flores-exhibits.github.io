@@ -1,0 +1,64 @@
+#content {
+  max-width: 800px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.emphasis {
+  font-weight: 800;
+  font-style: italic;
+}
+
+nav {
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+nav div {
+  padding: 14px 0px;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 4px solid black;
+  padding: 0;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: 800;
+}
+
+.heading {
+  margin: 40px 0;
+  display: block;
+  overflow: hidden;
+}
+
+.dot {
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.heading-description {
+  margin-left: 20%;
+}
+
+.heading-description p {
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-size: 20px;
+}
