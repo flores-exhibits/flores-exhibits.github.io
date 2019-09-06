@@ -47,52 +47,16 @@
           by
         </div>
       </div>
-      
+      <% _.forEach(exhibits, function(exhibit) { %>
         <div class="exhibit">
           <div class="exhibit-left exhibit-small emphasis">
-            01
+            <%= exhibit.number %>
           </div>
           <div class="exhibit-large emphasis">
-            SAKINA JAFFREY
+            <%= exhibit.reader %>
           </div>
         </div>
-      
-        <div class="exhibit">
-          <div class="exhibit-left exhibit-small emphasis">
-            02
-          </div>
-          <div class="exhibit-large emphasis">
-            FLAKE JIMENEZ
-          </div>
-        </div>
-      
-        <div class="exhibit">
-          <div class="exhibit-left exhibit-small emphasis">
-            03
-          </div>
-          <div class="exhibit-large emphasis">
-            MASHA KASARIE
-          </div>
-        </div>
-      
-        <div class="exhibit">
-          <div class="exhibit-left exhibit-small emphasis">
-            04
-          </div>
-          <div class="exhibit-large emphasis">
-            JEFF CHASE
-          </div>
-        </div>
-      
-        <div class="exhibit">
-          <div class="exhibit-left exhibit-small emphasis">
-            05
-          </div>
-          <div class="exhibit-large emphasis">
-            MELISSA CHANDLER
-          </div>
-        </div>
-      
+      <% }); %>
     </div>
   </div>
 </body>

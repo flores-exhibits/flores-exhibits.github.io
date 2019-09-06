@@ -70,6 +70,7 @@ h1 {
 
 .exhibit div {
   display: inline-block;
+  vertical-align: top;
 }
 
 .exhibit-left {
@@ -79,6 +80,10 @@ h1 {
 
 .exhibit-small {
   font-size: 12px;
+}
+
+.exhibit-large {
+  font-size: 50px;
 }
 
 /* Portrait and Landscape */
