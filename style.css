@@ -2,6 +2,7 @@
   max-width: 800px;
   margin: auto;
   font-family: sans-serif;
+  margin-bottom: 50px;
 }
 
 .emphasis {
@@ -12,6 +13,8 @@
 nav {
   overflow: hidden;
   margin-top: 10px;
+  padding-bottom: 15px;
+  border-bottom: 4px solid black;
 }
 
 nav div {
@@ -24,14 +27,6 @@ nav div {
 
 .float-right {
   float: right;
-}
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 4px solid black;
-  padding: 0;
 }
 
 h1 {
@@ -61,4 +56,35 @@ h1 {
   margin-bottom: 20px;
   line-height: 1.2;
   font-size: 20px;
+}
+
+.exhibits {
+  border-top: 2px solid black;
+  margin-top: 40px;
+}
+
+.exhibit {
+  border-bottom: 2px solid black;
+  padding: 20px 0;
+}
+
+.exhibit div {
+  display: inline-block;
+}
+
+.exhibit-left {
+  min-width: 150px;
+  padding-right: 10px;
+}
+
+.exhibit-small {
+  font-size: 12px;
+}
+
+/* Portrait and Landscape */
+@media only screen
+  and (max-device-width: 600px) {
+  h1 {
+    font-size: 100px;
+  }
 }
