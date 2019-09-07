@@ -1,22 +1,27 @@
 [
   {
     "number": "01",
-    "reader": "SAKINA JAFFREY"
+    "reader": "Sakina Jaffrey",
+    "readerTitle": "Actor"
   },
   {
     "number": "02",
-    "reader": "FLAKE JIMENEZ"
+    "reader": "Flake Jimenez",
+    "readerTitle": "Actor"
   },
   {
     "number": "03",
-    "reader": "MASHA KASARIE"
+    "reader": "Masha Kasarie",
+    "readerTitle": "Actor"
   },
   {
     "number": "04",
-    "reader": "JEFF CHASE"
+    "reader": "Jeff Chase",
+    "readerTitle": "Actor"
   },
   {
     "number": "05",
-    "reader": "MELISSA CHANDLER"
+    "reader": "Melissa Chandler",
+    "readerTitle": "Actor"
   }
 ]

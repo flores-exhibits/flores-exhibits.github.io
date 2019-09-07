@@ -2,61 +2,93 @@
 <html>
 <head>
   <title>Flores Exhibits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="reset.css">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div id="content">
     <nav class="navbar">
-      <div class="float-left">
-        Launch event September 21, 2019 in NYC
+      <div class="nav-element float-right uppercase">
+        Take Action
       </div>
-      <div class="float-right">
-        Details + RSVP
+      <div class="nav-element float-right">
+        Contact
+      </div>
+      <div class="nav-element float-right">
+        About
       </div>
     </nav>
     <div class="heading">
       <div class="float-left">
-        <h1>Flores<br>Exhibits</h1>
+        <h1 class="uppercase">
+          <span class="small">The</span><br>
+          Flores<br>
+          Exhibits
+        </h1>
       </div>
       <div class="float-right">
         <span class="dot"></span>
       </div>
     </div>
     <div class="heading-description">
-      <p>
-        In June 2019, a team of lawyers went to detention facilities at the U.S. / Mexico border, and discovered the conditions there did not meet the requirements laid out in the Flores Settlement.</p>
-      <p>
-        This team of lawyers took <span class="emphasis">65 sworn testimonies</span> from children and young adults – often young parents – detailing their experience in the detention facilities.
-      </p>
-      <p>
-        These 65 sworn testimonies were submitted as exhibits attached to a motion for a temporary restraining order filed by the National Center for Youth Law on June 26, 2019 which seeks to <span class="emphasis">provide immediate relief</span> to children living without access to basic hygiene supplies and adequate nutrition or sleep.
-      </p>
-      <p>
-        In the videos below, each reader reads <span class="emphasis">strictly what is presented in the sworn testimonies.</span>
-      </p>
-    </div>
-    <div class="exhibits">
-      <div class="exhibit">
-        <div class="exhibit-left exhibit-small emphasis">
-          exhibit<br>
-          no.
+      <div class="heading-description-text">
+        <p>
+          In June 2019, a team of lawyers went to detention facilities at the U.S. / Mexico border, and discovered the conditions there did not meet the requirements laid out in the Flores Settlement.</p>
+        <p>
+          This team of lawyers took <span class="emphasis">65 sworn testimonies</span> from children and young adults - often young parents - detailing their experience in the detention facilities.
+        </p>
+        <p>
+          These 65 sworn testimonies were submitted as exhibits attached to a motion for a temporary restraining order filed by the National Center for Youth Law on June 26, 2019 which seeks to <span class="emphasis">provide immediate relief</span> to children living without access to basic hygiene supplies and adequate nutrition or sleep.
+        </p>
+        <p>
+          In the videos below, each reader reads <span class="emphasis">strictly what is presented in the sworn testimonies.</span>
+        </p>
+      </div>
+      <div class="social-links">
+        <div class="social-link" data-href="http://www.instagram.com">
+          IG
         </div>
-        <div class="exhibit-small emphasis">
-          read<br>
-          by
+        <div class="social-link" data-href="http://www.facebook.com">
+          FB
+        </div>
+        <div class="social-link" data-href="http://www.twitter.com">
+          T
         </div>
       </div>
+    </div>
+    <div class="exhibits">
       <% _.forEach(exhibits, function(exhibit) { %>
         <div class="exhibit">
-          <div class="exhibit-left exhibit-small emphasis">
-            <%= exhibit.number %>
+          <div class="exhibit-left exhibit-large emphasis uppercase">
+            Exhibit&nbsp;&nbsp;&nbsp;#<%= exhibit.number %>
           </div>
-          <div class="exhibit-large emphasis">
-            <%= exhibit.reader %>
+          <div class="exhibit-right">
+            <div class="exhibit-small">
+              read by
+            </div>
+            <div class="exhibit-small">
+              <%= exhibit.reader %>
+            </div>
+            <div class="exhibit-small uppercase">
+              <%= exhibit.readerTitle %>
+            </div>
           </div>
         </div>
       <% }); %>
+    </div>
+    <div class="credits">
+      <div class="credits-left">
+        <span class="dot"></span>
+      </div>
+      <div class="credits-description">
+        <p>
+          This project is co-created by Waterwell and the Broadway Advocacy Coalition in collaboration with the Immigrants' Rights Clinic and the Center for Institutional and Social Change at Columbia Law School. By bringing two arts-based organizations with deep roots in civic engagement into a collaboration with the rigor, policy knowledge, and research prowess of two legal and public policy organizations, The Flores Exhibits aims to affect and influence systemic change through narrative-driven advocacy.
+        </p>
+        <p>
+          This project is generously supported by Jayne Baron Sherman and Deby Zum through The Sherzum Fund at Our Fund. EOTI Productions, Waterwell Films, Butter Studio and Sam Sweeney contributed in-kind services.
+        </p>
+      </div>
     </div>
   </div>
 </body>

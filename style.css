@@ -1,13 +1,43 @@
+@font-face {
+  font-family: "GT-America-Condensed-Black";
+  src: url("fonts/GT-America-Condensed-Black.woff2");
+}
+@font-face {
+  font-family: "GT-America-Expanded-Black";
+  src: url("fonts/GT-America-Expanded-Black.woff2");
+}
+@font-face {
+  font-family: "GT-Zirkon-Bold-Italic";
+  src: url("fonts/GT-Zirkon-Bold-Italic.woff2");
+}
+@font-face {
+  font-family: "GT-Zirkon-Bold";
+  src: url("fonts/GT-Zirkon-Bold.woff2");
+}
+@font-face {
+  font-family: "GT-Zirkon-Book";
+  src: url("fonts/GT-Zirkon-Book.woff2");
+}
+@font-face {
+  font-family: "GT-Zirkon-Medium";
+  src: url("fonts/GT-Zirkon-Medium.woff2");
+}
+
 #content {
   max-width: 800px;
   margin: auto;
-  font-family: sans-serif;
+  font-family: 'GT-Zirkon-Medium';
   margin-bottom: 50px;
+  padding: 0 5px;
 }
 
 .emphasis {
   font-weight: 800;
   font-style: italic;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 nav {
@@ -21,6 +51,14 @@ nav div {
   padding: 14px 0px;
 }
 
+.nav-element {
+  margin-left: 40px;
+}
+
+.nav-element:hover {
+  cursor: pointer;
+}
+
 .float-left {
   float: left;
 }
@@ -30,8 +68,19 @@ nav div {
 }
 
 h1 {
-  font-size: 80px;
-  font-weight: 800;
+  font-size: 55px;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: 60px;
+}
+
+h1 .small {
+  font-size: 40px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
 
 .heading {
@@ -41,15 +90,43 @@ h1 {
 }
 
 .dot {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   background-color: black;
   border-radius: 50%;
   display: inline-block;
 }
 
+.social-links {
+  margin-left: -100px;
+  margin-top: 200px;
+  width: 50px;
+  float: right;
+}
+
+.social-link {
+  margin-bottom: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid black;
+  line-height: 40px;
+  text-align: center;
+}
+
+.social-link:hover {
+  cursor: pointer;
+}
+
 .heading-description {
+  overflow: hidden;
+  width: 110%;
+}
+
+.heading-description-text {
+  float: left;
   margin-left: 20%;
+  margin-right: 10%;
 }
 
 .heading-description p {
@@ -68,14 +145,17 @@ h1 {
   padding: 20px 0;
 }
 
-.exhibit div {
-  display: inline-block;
+.exhibit {
   vertical-align: top;
+}
+
+.exhibit-left, .exhibit-right {
+  display: inline-block;
 }
 
 .exhibit-left {
   min-width: 150px;
-  padding-right: 10px;
+  padding-right: 30px;
 }
 
 .exhibit-small {
@@ -86,10 +166,19 @@ h1 {
   font-size: 50px;
 }
 
-/* Portrait and Landscape */
-@media only screen
-  and (max-device-width: 600px) {
-  h1 {
-    font-size: 100px;
-  }
+.credits {
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+.credits-left {
+  float: left;
+  width: 20%;
+}
+
+.credits-description {
+  display: inline-block;
+  width: 80%;
+  padding-bottom: 40px;
+  border-bottom: 2px solid black;
 }
