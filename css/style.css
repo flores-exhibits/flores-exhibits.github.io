@@ -241,3 +241,14 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+.modal h2 {
+  font-size: 50px;
+}
+
+.modal-heading-small {
+  font-size: 20px;
+  vertical-align: top;
+  position: relative;
+  top: 3px;
+}
