@@ -12,14 +12,14 @@ function isModalClick(evt) {
 function hideModals() {
   const modals = document.getElementsByClassName('modal');
   for (let modal of modals) {
-    modal.style.display = 'none';
+    modal.classList.remove('modal-opened');
   }
 }
 
 function isModalVisible() {
   const modals = document.getElementsByClassName('modal');
   for (let modal of modals) {
-    if (modal.style.display == 'block') {
+    if (modal.classList.contains('modal-opened')) {
       return true;
     }
   }
@@ -37,6 +37,9 @@ function isExpanded(exhibit) {
   return exhibit.parentNode.classList.contains('exhibit-open');
 }
 
+const FADE_IN_CLASSES = ['animated', 'fadeIn'];
+const FADE_OUT_CLASSES = ['animated', 'fadeOut'];
+
 const exhibits = document.getElementsByClassName('exhibit');
 for (let exhibit of exhibits) {
   exhibit.addEventListener('mouseenter', () => {
@@ -45,8 +48,11 @@ for (let exhibit of exhibits) {
     };
     const readerInfo = exhibit.querySelector('.reader-info');
     const declarationInfo = exhibit.querySelector('.declaration-info');
-    readerInfo.style.display = 'none';
-    declarationInfo.style.display = 'block';
+    readerInfo.classList.remove(...FADE_IN_CLASSES);
+    readerInfo.classList.add(...FADE_OUT_CLASSES);
+    declarationInfo.classList.remove('hidden');
+    declarationInfo.classList.remove(...FADE_OUT_CLASSES);
+    declarationInfo.classList.add(...FADE_IN_CLASSES);
   });
   exhibit.addEventListener('mouseleave', () => {
     if (isExpanded(exhibit)) {
@@ -54,8 +60,10 @@ for (let exhibit of exhibits) {
     };
     const readerInfo = exhibit.querySelector('.reader-info');
     const declarationInfo = exhibit.querySelector('.declaration-info');
-    readerInfo.style.display = 'block';
-    declarationInfo.style.display = 'none';
+    readerInfo.classList.remove(...FADE_OUT_CLASSES);
+    readerInfo.classList.add(...FADE_IN_CLASSES);
+    declarationInfo.classList.remove(...FADE_IN_CLASSES);
+    declarationInfo.classList.add(...FADE_OUT_CLASSES);
   });
   exhibit.addEventListener('click', (evt) => {
     evt.stopPropagation();
@@ -73,7 +81,7 @@ for (let modalOpener of modalOpeners) {
     hideModals();
     const targetModalId = modalOpener.dataset.modalid;
     const modal = document.getElementById(targetModalId);
-    modal.style.display = 'block';
+    modal.classList.add('modal-opened')
   });
 }
 
@@ -82,7 +90,7 @@ for (let closeBtn of modalCloseBtns) {
   closeBtn.addEventListener('click', (evt) => {
     evt.stopPropagation();
     const modal = findParentWithClassName(closeBtn, 'modal');
-    modal.style.display = 'none';
+    modal.classList.remove('modal-opened');
   });
 }
 

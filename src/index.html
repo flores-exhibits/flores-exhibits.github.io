@@ -10,9 +10,10 @@
   <link rel=“preload” href="/fonts/GT-Zirkon-Bold.woff2" as="font">
   <link rel=“preload” href="/fonts/GT-Zirkon-Book.woff2" as="font">
   <link rel=“preload” href="/fonts/GT-Zirkon-Medium.woff2" as="font">
-  <link rel="stylesheet" type="text/css" href="css/reset.css">
-  <link rel="stylesheet" type="text/css" href="css/flexboxgrid.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/css/flexboxgrid.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
   <div id="content">
@@ -71,26 +72,28 @@
                 Exhibit&nbsp;
                 <span class="exhibit-number">#&nbsp;</span><span class="expanded-black"><%= exhibit.number %></span>
               </div>
-              <div class="col-xs-5 reader-info">
-                <div class="exhibit-read-by zirkon-medium">
-                  read by
+              <div class="col-xs-5 info-container">
+                <div class="reader-info">
+                  <div class="exhibit-read-by zirkon-medium">
+                    read by
+                  </div>
+                  <div class="exhibit-reader bold-italic">
+                    <%= exhibit.reader %>
+                  </div>
+                  <div class="exhibit-title uppercase">
+                    <%= exhibit.readerTitle %>
+                  </div>
                 </div>
-                <div class="exhibit-reader bold-italic">
-                  <%= exhibit.reader %>
-                </div>
-                <div class="exhibit-title uppercase">
-                  <%= exhibit.readerTitle %>
-                </div>
-              </div>
-              <div class="col-xs-5 declaration-info">
-                <div class="exhibit-read-by zirkon-medium">
-                  declaration of
-                </div>
-                <div class="exhibit-reader bold-italic">
-                  <%= exhibit.declarationName %>
-                </div>
-                <div class="exhibit-title uppercase">
-                  <%= exhibit.declarationTitle %>
+                <div class="declaration-info hidden">
+                  <div class="exhibit-read-by zirkon-medium">
+                    declaration of
+                  </div>
+                  <div class="exhibit-reader bold-italic">
+                    <%= exhibit.declarationName %>
+                  </div>
+                  <div class="exhibit-title uppercase">
+                    <%= exhibit.declarationTitle %>
+                  </div>
                 </div>
               </div>
             </div>
