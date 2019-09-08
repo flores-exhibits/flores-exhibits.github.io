@@ -40,6 +40,14 @@ function isExpanded(exhibit) {
 const FADE_IN_CLASSES = ['animated', 'fadeIn'];
 const FADE_OUT_CLASSES = ['animated', 'fadeOut'];
 
+function transitionElements(elToShow, elToHide) {
+  elToHide.classList.remove(...FADE_IN_CLASSES);
+  elToHide.classList.add(...FADE_OUT_CLASSES);
+  elToShow.classList.remove('hidden');
+  elToShow.classList.remove(...FADE_OUT_CLASSES);
+  elToShow.classList.add(...FADE_IN_CLASSES);
+}
+
 const exhibits = document.getElementsByClassName('exhibit');
 for (let exhibit of exhibits) {
   exhibit.addEventListener('mouseenter', () => {
@@ -48,11 +56,7 @@ for (let exhibit of exhibits) {
     };
     const readerInfo = exhibit.querySelector('.reader-info');
     const declarationInfo = exhibit.querySelector('.declaration-info');
-    readerInfo.classList.remove(...FADE_IN_CLASSES);
-    readerInfo.classList.add(...FADE_OUT_CLASSES);
-    declarationInfo.classList.remove('hidden');
-    declarationInfo.classList.remove(...FADE_OUT_CLASSES);
-    declarationInfo.classList.add(...FADE_IN_CLASSES);
+    transitionElements(declarationInfo, readerInfo);
   });
   exhibit.addEventListener('mouseleave', () => {
     if (isExpanded(exhibit)) {
@@ -60,10 +64,7 @@ for (let exhibit of exhibits) {
     };
     const readerInfo = exhibit.querySelector('.reader-info');
     const declarationInfo = exhibit.querySelector('.declaration-info');
-    readerInfo.classList.remove(...FADE_OUT_CLASSES);
-    readerInfo.classList.add(...FADE_IN_CLASSES);
-    declarationInfo.classList.remove(...FADE_IN_CLASSES);
-    declarationInfo.classList.add(...FADE_OUT_CLASSES);
+    transitionElements(readerInfo, declarationInfo);
   });
   exhibit.addEventListener('click', (evt) => {
     evt.stopPropagation();
@@ -71,6 +72,10 @@ for (let exhibit of exhibits) {
     exhibitSection.classList.toggle('exhibit-open');
     const videoRow = exhibitSection.querySelector('.video-row');
     videoRow.classList.toggle('hidden');
+
+    const readerInfo = exhibit.querySelector('.reader-info');
+    const declarationInfo = exhibit.querySelector('.declaration-info');
+    transitionElements(readerInfo, declarationInfo);
   });
 }
 

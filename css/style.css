@@ -197,10 +197,6 @@ a {
   font-size: 130px;
 }
 
-.exhibit-open .declaration-info {
-  display: block;
-}
-
 .info-container {
   position: relative;
 }
@@ -209,10 +205,6 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.exhibit-open .reader-info {
-  display: none;
 }
 
 .video-row {
