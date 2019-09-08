@@ -155,13 +155,13 @@ a {
 }
 
 .exhibits {
-  border-top: 2px solid black;
+  border-bottom: 2px solid black;
   margin-top: 40px;
 }
 
 .exhibit {
   vertical-align: text-top;
-  border-bottom: 2px solid black;
+  border-top: 2px solid black;
   padding: 20px 0;
   margin-left: 0;
   margin-right: 0;
@@ -202,6 +202,27 @@ a {
   display: none;
 }
 
+.exhibit-open .declaration-info {
+  display: block;
+}
+
+.exhibit-open .reader-info {
+  display: none;
+}
+
+.video-row {
+  padding-bottom: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.vimeo {
+  margin: auto;
+  display: block;
+}
+
 .credits {
   margin-top: 60px;
   overflow: hidden;
@@ -215,16 +236,15 @@ a {
 }
 
 .credits-description {
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   padding-right: 0px;
-  display: inline-block;
+  display: block;
 }
 
 .credits-description:after {
   content: '';
   display: block;
   border-bottom: 2px solid;
-  position: relative;
   z-index: 0;
 }
 

@@ -33,20 +33,36 @@ function findParentWithClassName(element, className) {
   return element;
 }
 
+function isExpanded(exhibit) {
+  return exhibit.parentNode.classList.contains('exhibit-open');
+}
 
 const exhibits = document.getElementsByClassName('exhibit');
 for (let exhibit of exhibits) {
   exhibit.addEventListener('mouseenter', () => {
+    if (isExpanded(exhibit)) {
+      return;
+    };
     const readerInfo = exhibit.querySelector('.reader-info');
     const declarationInfo = exhibit.querySelector('.declaration-info');
     readerInfo.style.display = 'none';
     declarationInfo.style.display = 'block';
   });
   exhibit.addEventListener('mouseleave', () => {
+    if (isExpanded(exhibit)) {
+      return;
+    };
     const readerInfo = exhibit.querySelector('.reader-info');
     const declarationInfo = exhibit.querySelector('.declaration-info');
     readerInfo.style.display = 'block';
     declarationInfo.style.display = 'none';
+  });
+  exhibit.addEventListener('click', (evt) => {
+    evt.stopPropagation();
+    const exhibitSection = exhibit.parentNode;
+    exhibitSection.classList.toggle('exhibit-open');
+    const videoRow = exhibitSection.querySelector('.video-row');
+    videoRow.classList.toggle('hidden');
   });
 }
 
