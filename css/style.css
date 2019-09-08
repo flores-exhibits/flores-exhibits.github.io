@@ -24,15 +24,19 @@
 }
 
 #content {
-  max-width: 1000px;
   margin: auto;
   font-family: 'GT-Zirkon-Book';
-  margin-bottom: 50px;
+  margin: 0 100px 50px 100px;
   padding: 0 5px;
 }
 
 #main-content {
   position: relative;
+  padding: 0 25px;
+}
+
+.zirkon-book {
+  font-family: 'GT-Zirkon-Book';
 }
 
 .bold {
@@ -61,8 +65,8 @@
 
 nav {
   border-bottom: 4px solid black;
-  padding: 20px 0 30px;
-  font-size: 16px;
+  padding: 30px 0 30px;
+  font-size: 24px;
 }
 
 .nav-element {
@@ -78,14 +82,14 @@ nav {
 }
 
 h1 {
-  font-size: 75px;
-  line-height: 70px;
+  font-size: 130px;
+  line-height: 117px;
   letter-spacing: -1px;
 }
 
 h1 .small {
-  font-size: 35px;
-  line-height: 35px;
+  font-size: 65px;
+  line-height: 65px;
   margin-left: 2px;
 }
 
@@ -102,23 +106,22 @@ a {
 
 .heading-dot-container {
   position: absolute;
-  top: 30px;
+  top: 50px;
   right: 0.5rem;
 }
 
 .dot {
-  height: 30px;
-  width: 30px;
+  height: 45px;
+  width: 45px;
   background-color: black;
   border-radius: 50%;
   display: inline-block;
 }
 
 .social-links {
-  top: 200px;
-  width: 50px;
-  right: -60px;
-  position: absolute;
+  right: 25px;
+  bottom: 20px;
+  position: fixed;
 }
 
 .social-link {
@@ -142,7 +145,7 @@ a {
 .heading-description p {
   margin-bottom: 20px;
   line-height: 1.2;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .exhibits {
@@ -157,8 +160,8 @@ a {
 .exhibit {
   vertical-align: text-top;
   border-top: 2px solid black;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .exhibit:hover {
@@ -167,29 +170,31 @@ a {
 
 .exhibit-number {
   vertical-align: top;
-  font-size: 30px;
+  font-size: 60px;
   position: relative;
-  top: 6px;
+  top: 10px;
 }
 
 .exhibit-read-by {
   position: relative;
-  top: 6px;
-  font-size: 10px;
+  top: 10px;
+  font-size: 20px;
   margin-bottom: 10px;
+  line-height: 1.1;
 }
 
 .exhibit-reader {
-  font-size: 25px;
+  font-size: 50px;
   margin-bottom: 3px;
+  line-height: 1.2;
 }
 
 .exhibit-title {
-  font-size: 13px;
+  font-size: 26px;
 }
 
 .exhibit-large {
-  font-size: 65px;
+  font-size: 130px;
 }
 
 .declaration-info {
@@ -243,7 +248,7 @@ a {
 }
 
 .credits-description p {
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.4;
   margin-bottom: 20px;
 }
@@ -264,12 +269,12 @@ a {
 }
 
 .modal-content {
-  padding: 45px;
+  padding: 80px 90px 80px 80px;
 }
 
 .modal-body {
-  padding-top: 40px;
-  font-size: 20px;
+  padding-top: 80px;
+  font-size: 30px;
   line-height: 1.4;
 }
 
@@ -277,6 +282,7 @@ a {
   padding-left: 0;
   padding-right: 0;
   border-bottom: 1px solid black;
+  padding-bottom: 80px;
 }
 
 .modal-body p {
@@ -299,23 +305,23 @@ a {
 }
 
 .modal h2 {
-  font-size: 50px;
+  font-size: 90px;
 }
 
 .modal-heading-small {
-  font-size: 20px;
+  font-size: 40px;
   vertical-align: top;
   position: relative;
-  top: 3px;
+  top: 6px;
 }
 
 .modal-logos {
-  padding: 30px 0;
+  padding: 80px 0;
 }
 
 .modal-credit {
   padding-left: 0px;
-  padding-top: 40px;
+  padding-top: 80px;
 }
 
 .modal-credit a {
