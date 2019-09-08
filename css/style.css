@@ -204,7 +204,15 @@ a {
 }
 
 .video-row {
-  padding-bottom: 30px;
+  max-height: 0px;
+  transition-property: all;
+  transition-duration: 1s;
+  overflow-y: hidden;
+}
+
+.exhibit-open .video-row {
+  max-height: 800px;
+  margin-bottom: 30px;
 }
 
 .hidden {

@@ -70,8 +70,6 @@ for (let exhibit of exhibits) {
     evt.stopPropagation();
     const exhibitSection = exhibit.parentNode;
     exhibitSection.classList.toggle('exhibit-open');
-    const videoRow = exhibitSection.querySelector('.video-row');
-    videoRow.classList.toggle('hidden');
 
     const readerInfo = exhibit.querySelector('.reader-info');
     const declarationInfo = exhibit.querySelector('.declaration-info');
