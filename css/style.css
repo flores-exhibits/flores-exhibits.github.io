@@ -47,6 +47,14 @@
   font-family: "GT-Zirkon-Medium";
 }
 
+.condensed-black {
+  font-family: "GT-America-Condensed-Black";
+}
+
+.expanded-black {
+  font-family: "GT-America-Expanded-Black";
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -76,14 +84,6 @@ nav {
 
 .float-right {
   float: right;
-}
-
-.condensed-black {
-  font-family: "GT-America-Condensed-Black";
-}
-
-.expanded-black {
-  font-family: "GT-America-Expanded-Black";
 }
 
 h1 {
@@ -163,6 +163,12 @@ a {
   vertical-align: text-top;
   border-bottom: 2px solid black;
   padding: 20px 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.exhibit:hover {
+  cursor: pointer;
 }
 
 .exhibit-number {
@@ -190,6 +196,10 @@ a {
 
 .exhibit-large {
   font-size: 65px;
+}
+
+.declaration-info {
+  display: none;
 }
 
 .credits {
