@@ -32,7 +32,6 @@
 
 #main-content {
   position: relative;
-  padding: 0 25px;
 }
 
 .zirkon-book {
@@ -138,6 +137,10 @@ a {
   cursor: pointer;
 }
 
+.top-section {
+  padding: 0 25px;
+}
+
 .heading-description {
   position: relative;
 }
@@ -153,9 +156,13 @@ a {
   margin-top: 40px;
 }
 
+.exhibit-section {
+  padding: 0 25px;
+  border-top: 2px solid black;
+}
+
 .exhibit {
   vertical-align: text-top;
-  border-top: 2px solid black;
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -228,12 +235,13 @@ a {
   margin-top: 60px;
   overflow: hidden;
   position: relative;
+  padding: 0 25px;
 }
 
 .credits-dot-container {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 25px;
 }
 
 .credits-description {
