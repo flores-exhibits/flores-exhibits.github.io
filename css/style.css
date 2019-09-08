@@ -24,7 +24,7 @@
 }
 
 #content {
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
   font-family: 'GT-Zirkon-Book';
   margin-bottom: 50px;
@@ -55,7 +55,7 @@ nav {
   border-bottom: 4px solid black;
   padding: 20px 0 30px;
   font-size: 16px;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .navbar {
@@ -210,20 +210,36 @@ a {
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: absolute; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: absolute;
+  z-index: 1;
   left: 0;
   top: -4px;
-  max-width: 800px;
-  width: 100%; /* Full width */
-  overflow: auto; /* Enable scroll if needed */
+  max-width: 1000px;
+  width: 100%;
+  overflow: auto;
   border: 3px solid black;
   background-color: white;
 }
 
 .modal-content {
-  padding: 29px;
+  padding: 45px;
+}
+
+.modal-body {
+  padding-top: 40px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.modal-section {
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 1px solid black;
+}
+
+.modal-body p {
+  margin-bottom: 20px;
 }
 
 /* The Close Button */
@@ -250,4 +266,17 @@ a {
   vertical-align: top;
   position: relative;
   top: 3px;
+}
+
+.modal-logos {
+  padding: 30px 0;
+}
+
+.modal-credit {
+  padding-left: 0px;
+  padding-top: 40px;
+}
+
+.modal-credit a {
+  text-decoration: underline;
 }
