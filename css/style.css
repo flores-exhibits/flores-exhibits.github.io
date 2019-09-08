@@ -99,7 +99,7 @@ a {
 }
 
 .heading {
-  margin-bottom:60px;
+  margin-bottom: 60px;
   display: block;
   position: relative;
 }
@@ -151,10 +151,6 @@ a {
 .exhibits {
   border-bottom: 2px solid black;
   margin-top: 40px;
-}
-
-.exhibit-section {
-  /*border-top: 2px solid black;*/
 }
 
 .exhibit {
