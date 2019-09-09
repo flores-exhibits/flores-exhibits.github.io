@@ -10,14 +10,27 @@ function isModalClick(evt) {
 }
 
 function hideModals() {
-  removeClassName('modal', 'modal-opened');
+  removeClassName('modal', 'modal-opened', 'modal-border');
   removeClassName('modal-open-text', 'selected');
 }
 
-function removeClassName(selectorClass, className) {
+function removeClassName(selectorClass, className, classNameAfterAnimation) {
   const modals = document.getElementsByClassName(selectorClass);
   for (let modal of modals) {
+    if (!modal.classList.contains(className)) {
+      continue;
+    }
     modal.classList.remove(className);
+    if (classNameAfterAnimation) {
+      let removedClassName = false;
+      modal.addEventListener('transitionend', () => {
+        if (removedClassName) {
+          return;
+        }
+        removedClassName = true;
+        modal.classList.remove(classNameAfterAnimation);
+      });
+    }
   }
 }
 
@@ -45,7 +58,7 @@ function isExpanded(exhibit) {
 const FADE_IN_CLASSES = ['animated', 'fadeIn'];
 const FADE_OUT_CLASSES = ['animated', 'fadeOut'];
 
-function transitionElements(elToShow, elToHide) {
+function fadeElements(elToShow, elToHide) {
   elToHide.classList.remove(...FADE_IN_CLASSES);
   elToHide.classList.add(...FADE_OUT_CLASSES);
   elToShow.classList.remove('hidden');
@@ -68,7 +81,7 @@ for (let exhibit of exhibits) {
     };
     const readerInfo = exhibit.querySelector('.reader-info');
     const declarationInfo = exhibit.querySelector('.declaration-info');
-    transitionElements(declarationInfo, readerInfo);
+    fadeElements(declarationInfo, readerInfo);
   });
   exhibit.addEventListener('mouseleave', () => {
     if (isExpanded(exhibit)) {
@@ -76,7 +89,7 @@ for (let exhibit of exhibits) {
     };
     const readerInfo = exhibit.querySelector('.reader-info');
     const declarationInfo = exhibit.querySelector('.declaration-info');
-    transitionElements(readerInfo, declarationInfo);
+    fadeElements(readerInfo, declarationInfo);
   });
   exhibit.addEventListener('click', (evt) => {
     evt.stopPropagation();
@@ -90,7 +103,7 @@ for (let exhibit of exhibits) {
 
     const readerInfo = exhibit.querySelector('.reader-info');
     const declarationInfo = exhibit.querySelector('.declaration-info');
-    transitionElements(readerInfo, declarationInfo);
+    fadeElements(readerInfo, declarationInfo);
   });
 }
 
@@ -103,7 +116,8 @@ for (let modalOpener of modalOpeners) {
     modalOpenerText.classList.add('selected');
     const targetModalId = modalOpener.dataset.modalid;
     const modal = document.getElementById(targetModalId);
-    modal.classList.add('modal-opened')
+    modal.classList.add('modal-opened');
+    modal.classList.add('modal-border');
   });
 }
 
@@ -111,9 +125,7 @@ const modalCloseBtns = document.getElementsByClassName("modal-close");
 for (let closeBtn of modalCloseBtns) {
   closeBtn.addEventListener('click', (evt) => {
     evt.stopPropagation();
-  removeClassName('modal-open-text', 'selected');
-    const modal = findParentWithClassName(closeBtn, 'modal');
-    modal.classList.remove('modal-opened');
+    hideModals();
   });
 }
 
