@@ -98,13 +98,13 @@ nav {
 
 h1 {
   font-size: 130px;
-  line-height: 117px;
+  line-height: 0.9;
   letter-spacing: -1px;
 }
 
 h1 .small {
   font-size: 65px;
-  line-height: 65px;
+  line-height: 1;
   margin-left: 2px;
 }
 
@@ -393,7 +393,23 @@ a {
 
   #content {
     margin: 20px 5px 0 5px;
-    /*border-top: 2px solid black;*/
+    border-top: 2px solid black;
     width: 100%;
+  }
+
+  .top-section {
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h1 .small {
+    font-size: 30px;
+  }
+
+  .social-links {
+    display: none;
   }
 }
