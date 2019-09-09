@@ -387,9 +387,9 @@ a {
   }
 
   #content {
-    margin: 20px 5px 0 5px;
+    margin: auto;
+    margin-top: 20px;
     border-top: 2px solid black;
-    width: 100%;
   }
 
   .top-section {
@@ -397,6 +397,10 @@ a {
   }
 
   .exhibit-section {
+    padding: 0;
+  }
+
+  .credits {
     padding: 0;
   }
 
@@ -410,5 +414,17 @@ a {
 
   iframe {
     width: 100%;
+  }
+
+  .exhibit {
+    padding-left: 10px;
+  }
+
+  .exhibit-large {
+    font-size: 60px;
+  }
+
+  .exhibit-number {
+    font-size: 30px;
   }
 }
