@@ -213,7 +213,7 @@ a {
 .video-row {
   max-height: 0px;
   transition-property: all;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   overflow-y: hidden;
 }
 

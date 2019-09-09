@@ -48,6 +48,13 @@ function transitionElements(elToShow, elToHide) {
   elToShow.classList.add(...FADE_IN_CLASSES);
 }
 
+function hideAllExhibits() {
+  const exhibits = document.getElementsByClassName('exhibit-open');
+  for (let exhibit of exhibits) {
+    exhibit.classList.remove('exhibit-open');
+  }
+}
+
 const exhibits = document.getElementsByClassName('exhibit');
 for (let exhibit of exhibits) {
   exhibit.addEventListener('mouseenter', () => {
@@ -69,7 +76,12 @@ for (let exhibit of exhibits) {
   exhibit.addEventListener('click', (evt) => {
     evt.stopPropagation();
     const exhibitSection = exhibit.parentNode;
-    exhibitSection.classList.toggle('exhibit-open');
+    if (exhibitSection.classList.contains('exhibit-open')) {
+      hideAllExhibits();
+    } else {
+      hideAllExhibits();
+      exhibitSection.classList.add('exhibit-open');
+    }
 
     const readerInfo = exhibit.querySelector('.reader-info');
     const declarationInfo = exhibit.querySelector('.declaration-info');
