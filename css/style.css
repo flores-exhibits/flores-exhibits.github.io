@@ -350,3 +350,16 @@ a {
 .modal-credit a {
   text-decoration: underline;
 }
+
+.action-ideas {
+  padding-top: 60px;
+  font-family: "GT-America-Condensed-Black";
+  font-size: 40px;
+}
+
+.action-ideas .small {
+  font-size: 20px;
+  vertical-align: top;
+  position: relative;
+  top: 8px;
+}
