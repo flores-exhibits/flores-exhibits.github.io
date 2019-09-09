@@ -29,6 +29,13 @@
   padding: 0 5px;
 }
 
+::selection {
+  background: #ffb7b7; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #ffb7b7; /* Gecko Browsers */
+}
+
 #main-content {
   position: relative;
 }
