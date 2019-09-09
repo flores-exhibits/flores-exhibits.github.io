@@ -24,7 +24,6 @@
 }
 
 #content {
-  margin: auto;
   font-family: 'GT-Zirkon-Book';
   margin: 0 100px 50px 100px;
   padding: 0 5px;
@@ -125,12 +124,17 @@ a {
 
 .social-link {
   margin-bottom: 10px;
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
-  border: 2px solid black;
-  line-height: 40px;
+  border: 3px solid black;
   text-align: center;
+  font-size: 35px;
+}
+
+.social-link-text {
+  position: relative;
+  top: 12px;
 }
 
 .social-link:hover {
