@@ -78,6 +78,11 @@ nav {
   text-align: right;
 }
 
+.modal-open-text.selected {
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
 .nav-element:hover {
   cursor: pointer;
 }

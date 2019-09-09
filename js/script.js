@@ -10,9 +10,14 @@ function isModalClick(evt) {
 }
 
 function hideModals() {
-  const modals = document.getElementsByClassName('modal');
+  removeClassName('modal', 'modal-opened');
+  removeClassName('modal-open-text', 'selected');
+}
+
+function removeClassName(selectorClass, className) {
+  const modals = document.getElementsByClassName(selectorClass);
   for (let modal of modals) {
-    modal.classList.remove('modal-opened');
+    modal.classList.remove(className);
   }
 }
 
@@ -94,6 +99,8 @@ for (let modalOpener of modalOpeners) {
   modalOpener.addEventListener('click', (evt) => {
     evt.stopPropagation();
     hideModals();
+    const modalOpenerText = modalOpener.querySelector('.modal-open-text');
+    modalOpenerText.classList.add('selected');
     const targetModalId = modalOpener.dataset.modalid;
     const modal = document.getElementById(targetModalId);
     modal.classList.add('modal-opened')
@@ -104,6 +111,7 @@ const modalCloseBtns = document.getElementsByClassName("modal-close");
 for (let closeBtn of modalCloseBtns) {
   closeBtn.addEventListener('click', (evt) => {
     evt.stopPropagation();
+  removeClassName('modal-open-text', 'selected');
     const modal = findParentWithClassName(closeBtn, 'modal');
     modal.classList.remove('modal-opened');
   });
