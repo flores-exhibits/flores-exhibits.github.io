@@ -247,11 +247,6 @@ a {
   display: none;
 }
 
-.vimeo {
-  margin: auto;
-  display: block;
-}
-
 .credits {
   margin-top: 60px;
   overflow: hidden;
@@ -401,6 +396,10 @@ a {
     padding: 0;
   }
 
+  .exhibit-section {
+    padding: 0;
+  }
+
   h1 {
     font-size: 60px;
   }
@@ -411,5 +410,9 @@ a {
 
   .social-links {
     display: none;
+  }
+
+  iframe {
+    width: 100%;
   }
 }
