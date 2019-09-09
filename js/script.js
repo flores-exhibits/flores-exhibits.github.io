@@ -73,64 +73,91 @@ function hideAllExhibits() {
   }
 }
 
-const exhibits = document.getElementsByClassName('exhibit');
-for (let exhibit of exhibits) {
-  exhibit.addEventListener('mouseenter', () => {
-    if (isExpanded(exhibit)) {
-      return;
-    };
-    const readerInfo = exhibit.querySelector('.reader-info');
-    const declarationInfo = exhibit.querySelector('.declaration-info');
-    fadeElements(declarationInfo, readerInfo);
-  });
-  exhibit.addEventListener('mouseleave', () => {
-    if (isExpanded(exhibit)) {
-      return;
-    };
-    const readerInfo = exhibit.querySelector('.reader-info');
-    const declarationInfo = exhibit.querySelector('.declaration-info');
-    fadeElements(readerInfo, declarationInfo);
-  });
-  exhibit.addEventListener('click', (evt) => {
-    evt.stopPropagation();
-    const exhibitSection = exhibit.parentNode;
-    if (exhibitSection.classList.contains('exhibit-open')) {
-      hideAllExhibits();
-    } else {
-      hideAllExhibits();
-      exhibitSection.classList.add('exhibit-open');
-    }
+function setExhibitListeners() {
+  const exhibits = document.getElementsByClassName('exhibit');
+  for (let exhibit of exhibits) {
+    exhibit.addEventListener('mouseenter', () => {
+      if (isExpanded(exhibit)) {
+        return;
+      };
+      const readerInfo = exhibit.querySelector('.reader-info');
+      const declarationInfo = exhibit.querySelector('.declaration-info');
+      fadeElements(declarationInfo, readerInfo);
+    });
+    exhibit.addEventListener('mouseleave', () => {
+      if (isExpanded(exhibit)) {
+        return;
+      };
+      const readerInfo = exhibit.querySelector('.reader-info');
+      const declarationInfo = exhibit.querySelector('.declaration-info');
+      fadeElements(readerInfo, declarationInfo);
+    });
+    exhibit.addEventListener('click', (evt) => {
+      evt.stopPropagation();
+      const exhibitSection = exhibit.parentNode;
+      if (exhibitSection.classList.contains('exhibit-open')) {
+        hideAllExhibits();
+      } else {
+        hideAllExhibits();
+        exhibitSection.classList.add('exhibit-open');
+      }
 
-    const readerInfo = exhibit.querySelector('.reader-info');
-    const declarationInfo = exhibit.querySelector('.declaration-info');
-    fadeElements(readerInfo, declarationInfo);
-  });
-}
-
-const modalOpeners = document.getElementsByClassName("modal-open");
-for (let modalOpener of modalOpeners) {
-  modalOpener.addEventListener('click', (evt) => {
-    evt.stopPropagation();
-    hideModals();
-    const modalOpenerText = modalOpener.querySelector('.modal-open-text');
-    modalOpenerText.classList.add('selected');
-    const targetModalId = modalOpener.dataset.modalid;
-    const modal = document.getElementById(targetModalId);
-    modal.classList.add('modal-opened');
-    modal.classList.add('modal-border');
-  });
-}
-
-const modalCloseBtns = document.getElementsByClassName("modal-close");
-for (let closeBtn of modalCloseBtns) {
-  closeBtn.addEventListener('click', (evt) => {
-    evt.stopPropagation();
-    hideModals();
-  });
-}
-
-window.addEventListener('click', (evt) => {
-  if (isModalVisible() && !isModalClick(evt)) {
-    hideModals();
+      const readerInfo = exhibit.querySelector('.reader-info');
+      const declarationInfo = exhibit.querySelector('.declaration-info');
+      fadeElements(readerInfo, declarationInfo);
+    });
   }
-});
+}
+
+
+function setModalOpenListeners() {
+  const modalOpeners = document.getElementsByClassName("modal-open");
+  for (let modalOpener of modalOpeners) {
+    modalOpener.addEventListener('click', (evt) => {
+      evt.stopPropagation();
+      hideModals();
+      const modalOpenerText = modalOpener.querySelector('.modal-open-text');
+      modalOpenerText.classList.add('selected');
+      const targetModalId = modalOpener.dataset.modalid;
+      const modal = document.getElementById(targetModalId);
+      modal.classList.add('modal-opened');
+      modal.classList.add('modal-border');
+    });
+  }
+}
+
+function setModalCloseListeners() {
+  const modalCloseBtns = document.getElementsByClassName("modal-close");
+  for (let closeBtn of modalCloseBtns) {
+    closeBtn.addEventListener('click', (evt) => {
+      evt.stopPropagation();
+      hideModals();
+    });
+  }
+
+  window.addEventListener('click', (evt) => {
+    if (isModalVisible() && !isModalClick(evt)) {
+      hideModals();
+    }
+  });
+}
+
+const DEFAULT_ASPECT_RATIO = 16 / 9;
+
+function sizeIframes() {
+  const iframes = document.getElementsByTagName('iframe');
+  for (let iframe of iframes) {
+    const width = parseInt(getComputedStyle(iframe).width);
+    if (width !== 1280) {
+      const height = width / DEFAULT_ASPECT_RATIO;
+      iframe.height = height;
+    }
+  }
+}
+
+window.onload = () => {
+  setExhibitListeners();
+  setModalOpenListeners();
+  setModalCloseListeners();
+  sizeIframes();
+};
