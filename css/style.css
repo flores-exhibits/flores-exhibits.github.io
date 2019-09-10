@@ -152,7 +152,7 @@ a {
 
 .social-link-text {
   position: relative;
-  top: 12px;
+  top: 14px;
 }
 
 .social-link:hover {
@@ -234,7 +234,7 @@ a {
 
 .video-row {
   max-height: 0px;
-  transition-property: all;
+  transition-property: max-height;
   transition-duration: 0.5s;
   overflow-y: hidden;
 }
@@ -404,6 +404,52 @@ a {
     font-size: 30px;
   }
 
+  .menu-icon-container {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    z-index: 2;
+  }
+
+  .menu-icon {
+    transition-property: transform;
+    transition-duration: 0.5s;
+    width: 40px;
+  }
+
+  .menu-icon.rotated {
+    transform: rotate(90deg);
+  }
+
+  .dropdown-menu-container {
+    position: absolute;
+    top: -2px;
+    right: -14px;
+    background-color: white;
+    z-index: 1;
+    max-height: 0px;
+    overflow: hidden;
+    transition-property: max-height;
+    transition-duration: 0.5s;
+  }
+
+  .dropdown-menu-container-open {
+    max-height: 150px;
+  }
+
+  .dropdown-menu-container-border {
+    border: 3px solid black;
+  }
+
+  .dropdown-menu {
+    padding: 20px 50px 20px 20px;
+  }
+
+  .dropdown-menu li {
+    font-size: 25px;
+    padding-bottom: 10px;
+  }
+
   .heading-description p {
     margin-bottom: 20px;
     line-height: 1.3;
@@ -502,4 +548,3 @@ a {
     font-size: 28px;
   }
 }
-

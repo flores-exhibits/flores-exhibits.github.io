@@ -142,6 +142,25 @@ function setModalCloseListeners() {
   });
 }
 
+function setMenuIconListener() {
+  const menuIconContainer = document.getElementsByClassName('menu-icon-container')[0];
+  const dropdownMenu = document.getElementsByClassName('dropdown-menu-container')[0];
+  menuIconContainer.addEventListener('touchstart', () => {
+    menuIconContainer.querySelector('img').classList.toggle('rotated');
+    const isMenuOpen = dropdownMenu.classList.contains('dropdown-menu-container-open');
+    if (isMenuOpen) {
+      removeClassName(
+        'dropdown-menu-container',
+        'dropdown-menu-container-open',
+        'dropdown-menu-container-border'
+       );
+    } else {
+      dropdownMenu.classList.add('dropdown-menu-container-border');
+      dropdownMenu.classList.add('dropdown-menu-container-open');
+    }
+  });
+}
+
 const DEFAULT_ASPECT_RATIO = 16 / 9;
 
 function sizeIframes() {
@@ -158,4 +177,5 @@ function sizeIframes() {
 setExhibitListeners();
 setModalOpenListeners();
 setModalCloseListeners();
+setMenuIconListener();
 sizeIframes();
