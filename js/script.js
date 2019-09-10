@@ -121,19 +121,29 @@ function setExhibitListeners() {
   }
 }
 
+function openModal(evt, modalOpener) {
+  evt.stopPropagation();
+  hideModals();
+  const modalOpenerText = modalOpener.querySelector('.modal-open-text');
+  if (modalOpenerText) {
+    modalOpenerText.classList.add('selected');
+  }
+  const targetModalId = modalOpener.dataset.modalid;
+  const modal = document.getElementById(targetModalId);
+  modal.classList.add('modal-opened');
+  modal.classList.add('modal-border');
+}
+
 
 function setModalOpenListeners() {
   const modalOpeners = document.getElementsByClassName("modal-open");
   for (let modalOpener of modalOpeners) {
     modalOpener.addEventListener('click', (evt) => {
-      evt.stopPropagation();
-      hideModals();
-      const modalOpenerText = modalOpener.querySelector('.modal-open-text');
-      modalOpenerText.classList.add('selected');
-      const targetModalId = modalOpener.dataset.modalid;
-      const modal = document.getElementById(targetModalId);
-      modal.classList.add('modal-opened');
-      modal.classList.add('modal-border');
+      openModal(evt, modalOpener);
+    });
+    modalOpener.addEventListener('touchstart', (evt) => {
+      openModal(evt, modalOpener);
+      hideMenu();
     });
   }
 }
@@ -186,6 +196,10 @@ function setMenuCloseListener() {
   window.addEventListener('touchstart', (evt) => {
     if (isMenuOpen() && !isMenuTap(evt) && !isMenuIconTap(evt)) {
       hideMenu();
+    }
+
+    if (isModalVisible() && !isModalClick(evt)) {
+      hideModals();
     }
   });
 }

@@ -286,7 +286,7 @@ a {
 .modal {
   max-height: 0px;
   position: absolute;
-  z-index: 1;
+  z-index: 10;
   left: 0;
   top: -4px;
   background-color: white;
@@ -328,8 +328,6 @@ a {
 .modal-close {
   color: black;
   float: right;
-  font-size: 28px;
-  font-weight: bold;
 }
 
 .modal-close:hover,
@@ -352,10 +350,10 @@ a {
 
 .modal-logos {
   padding: 80px 0;
+  border-bottom: 1px solid black;
 }
 
 .modal-credit {
-  padding-left: 0px;
   padding-top: 80px;
 }
 
@@ -402,6 +400,61 @@ a {
 
   h1 .small {
     font-size: 30px;
+  }
+
+  .modal {
+    margin-left: 0px;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal h2 {
+    font-size: 30px;
+  }
+
+  .modal-heading-small {
+    font-size: 20px;
+    top: 6px;
+  }
+
+  .modal-section {
+    padding-bottom: 20px;
+  }
+
+  .modal-body {
+    padding-top: 30px;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .modal-close img {
+    height: 25px;
+  }
+
+  .modal-logos {
+    padding-top: 20px;
+    padding-bottom: 0px;
+  }
+
+  .modal-logo {
+    padding-bottom: 20px;
+  }
+
+  .modal-credit {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .action-ideas {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+
+  .action-ideas .small {
+    font-size: 12px;
+    top: 4px;
   }
 
   .menu-icon-container {
