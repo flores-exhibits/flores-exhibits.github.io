@@ -1,7 +1,19 @@
 function isModalClick(evt) {
+  return eventHasTargetClass(evt, 'modal-content');
+}
+
+function isMenuTap(evt) {
+  return eventHasTargetClass(evt, 'dropdown-menu-container');
+}
+
+function isMenuIconTap(evt) {
+  return eventHasTargetClass(evt, 'menu-icon-container');
+}
+
+function eventHasTargetClass(evt, className) {
   let target = evt.target;
   while (target != document) {
-    if (target.classList.contains('modal-content')) {
+    if (target.classList.contains(className)) {
       return true;
     }
     target = target.parentNode;
@@ -142,21 +154,38 @@ function setModalCloseListeners() {
   });
 }
 
+function isMenuOpen() {
+  const dropdownMenu = document.getElementsByClassName('dropdown-menu-container')[0];
+  return dropdownMenu.classList.contains('dropdown-menu-container-open');
+}
+
+function hideMenu() {
+  document.querySelector('.menu-icon').classList.remove('rotated');
+  removeClassName(
+    'dropdown-menu-container',
+    'dropdown-menu-container-open',
+    'dropdown-menu-container-border'
+  );
+}
+
 function setMenuIconListener() {
   const menuIconContainer = document.getElementsByClassName('menu-icon-container')[0];
   const dropdownMenu = document.getElementsByClassName('dropdown-menu-container')[0];
   menuIconContainer.addEventListener('touchstart', () => {
-    menuIconContainer.querySelector('img').classList.toggle('rotated');
-    const isMenuOpen = dropdownMenu.classList.contains('dropdown-menu-container-open');
-    if (isMenuOpen) {
-      removeClassName(
-        'dropdown-menu-container',
-        'dropdown-menu-container-open',
-        'dropdown-menu-container-border'
-       );
+    if (isMenuOpen()) {
+      hideMenu();
     } else {
       dropdownMenu.classList.add('dropdown-menu-container-border');
       dropdownMenu.classList.add('dropdown-menu-container-open');
+      menuIconContainer.querySelector('img').classList.add('rotated');
+    }
+  });
+}
+
+function setMenuCloseListener() {
+  window.addEventListener('touchstart', (evt) => {
+    if (isMenuOpen() && !isMenuTap(evt) && !isMenuIconTap(evt)) {
+      hideMenu();
     }
   });
 }
@@ -178,4 +207,5 @@ setExhibitListeners();
 setModalOpenListeners();
 setModalCloseListeners();
 setMenuIconListener();
+setMenuCloseListener();
 sizeIframes();
