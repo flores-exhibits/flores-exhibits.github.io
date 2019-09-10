@@ -155,9 +155,7 @@ function sizeIframes() {
   }
 }
 
-window.onload = () => {
-  setExhibitListeners();
-  setModalOpenListeners();
-  setModalCloseListeners();
-  sizeIframes();
-};
+setExhibitListeners();
+setModalOpenListeners();
+setModalCloseListeners();
+sizeIframes();
