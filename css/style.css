@@ -421,14 +421,31 @@ a {
 
   .exhibit {
     padding-left: 10px;
+    padding-bottom: 15px;
   }
 
   .exhibit-large {
-    font-size: 48px;
+    font-size: 55px;
   }
 
   .exhibit-number {
-    font-size: 28px;
+    font-size: 30px;
+  }
+
+  .mobile-reader-info div {
+    display: inline-block;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+
+  .mobile-exhibit-read-by {
+    font-size: 12px;
+    position: relative;
+    top: -3px;
+  }
+
+  .mobile-exhibit-reader {
+    font-size: 20px;
   }
 
   .credits {
@@ -475,3 +492,14 @@ a {
     top: 9px;
   }
 }
+
+@media only screen and (max-device-width : 320px) {
+  .exhibit-large {
+    font-size: 48px;
+  }
+
+  .exhibit-number {
+    font-size: 28px;
+  }
+}
+

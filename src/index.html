@@ -46,6 +46,19 @@
                 </div>
               </div>
             </div>
+            <div class="mobile-reader-info row mobile-only">
+              <div class="col-xs">
+                <div class="mobile-exhibit-read-by zirkon-medium">
+                  read by
+                </div>
+                <div class="mobile-exhibit-reader bold-italic">
+                  <%= exhibit.reader %>
+                </div>
+                <div class="mobile-exhibit-title uppercase">
+                  <%= exhibit.readerTitle %>
+                </div>
+              </div>
+            </div>
             <div class="video-row row">
               <div class="col-xs">
                 <iframe class="vimeo" src="<%= exhibit.videoLink %>" width="1280" height="744" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
