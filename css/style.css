@@ -293,6 +293,43 @@ a {
 
 .credits-icons {
   margin-top: 20px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+}
+
+.credits-presented-by {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.credits-presented-by-container {
+  border-top: 2px solid black;
+  padding-top: 60px;
+}
+
+.waterwell-logo {
+  position: relative;
+  top: 10px;
+}
+
+.bac-logo {
+  width: 160px;
+}
+
+.amplify-logo {
+  width: 250px;
+  top: -30px;
+  position: relative;
+}
+
+.cisc-logo {
+  width: 260px;
+}
+
+.irc-logo {
+  position: relative;
+  top: 10px;
+  width: 250px;
 }
 
 .modal {
@@ -585,6 +622,10 @@ a {
     width: 30px;
   }
 
+  .credits-description-text {
+    margin-bottom: 40px;
+  }
+
   .credits-description p {
     font-size: 18px;
     line-height: 1.4;
@@ -592,12 +633,27 @@ a {
   }
 
   .credits-icons {
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .credits-icon {
     padding-bottom: 20px;
+    margin-bottom: 10px;
+  }
+
+  .credits-presented-by {
+    margin-bottom: 15px;
+  }
+
+  .credits-presented-by-container {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  .amplify-logo-container {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
   }
 
   .social-links {
