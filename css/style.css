@@ -34,11 +34,11 @@
 }
 
 ::selection {
-  background: #ffb7b7; /* WebKit/Blink Browsers */
+  background: #FF2D00; /* WebKit/Blink Browsers */
 }
 
 ::-moz-selection {
-  background: #ffb7b7; /* Gecko Browsers */
+  background: #FF2D00; /* Gecko Browsers */
 }
 
 #main-content {
@@ -75,8 +75,8 @@
 
 nav {
   border-bottom: 4px solid black;
-  padding: 30px 0 30px;
-  font-size: 24px;
+  padding: 40px 0 30px;
+  font-size: 22px;
 }
 
 .nav-element {
@@ -97,13 +97,13 @@ nav {
 }
 
 h1 {
-  font-size: 130px;
+  font-size: 110px;
   line-height: 0.9;
   letter-spacing: -1px;
 }
 
 h1 .small {
-  font-size: 65px;
+  font-size: 55px;
   line-height: 1;
   margin-left: 2px;
 }
@@ -126,8 +126,8 @@ a {
 }
 
 .dot {
-  height: 45px;
-  width: 45px;
+  height: 40px;
+  width: 40px;
   background-color: black;
   border-radius: 50%;
   display: inline-block;
@@ -152,7 +152,9 @@ a {
 
 .social-link-text {
   position: relative;
-  top: 14px;
+  top: 11px;
+  font-family: "GT-America-Condensed-Black";
+  font-size: 27px;
 }
 
 .social-link:hover {
@@ -169,8 +171,8 @@ a {
 
 .heading-description p {
   margin-bottom: 20px;
-  line-height: 1.2;
-  font-size: 30px;
+  line-height: 1.4;
+  font-size: 24px;
 }
 
 .exhibits {
@@ -203,19 +205,19 @@ a {
 .exhibit-read-by {
   position: relative;
   top: 10px;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 10px;
   line-height: 1.1;
 }
 
 .exhibit-reader {
-  font-size: 50px;
+  font-size: 40px;
   margin-bottom: 3px;
   line-height: 1.2;
 }
 
 .exhibit-title {
-  font-size: 26px;
+  font-size: 20px;
 }
 
 .exhibit-large {
@@ -230,6 +232,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
+  padding-top: 12px;
 }
 
 .video-row {
@@ -263,6 +266,7 @@ a {
 
 .credits-description {
   padding-bottom: 40px;
+  margin-right: 50px;
   display: block;
 }
 
@@ -274,9 +278,13 @@ a {
 }
 
 .credits-description p {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.4;
   margin-bottom: 20px;
+}
+
+.credits-description-text {
+  margin-bottom: 60px;
 }
 
 .credits-icons {
