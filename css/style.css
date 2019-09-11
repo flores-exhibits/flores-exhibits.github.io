@@ -349,7 +349,7 @@ a {
 }
 
 .modal-opened {
-  max-height: 1300px;
+  max-height: 1500px;
 }
 
 .modal-content {
@@ -444,10 +444,16 @@ a {
     display: none;
   }
 
+  body {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
   #content {
     margin: auto;
     margin-top: 20px;
     border-top: 2px solid black;
+    padding: 0;
   }
 
   .top-section {
@@ -502,9 +508,21 @@ a {
     padding-bottom: 20px;
   }
 
+  .modal-logo img {
+    max-width: 250px;
+  }
+
   .modal-credit {
     padding-top: 30px;
     padding-bottom: 30px;
+  }
+
+  #about-modal .waterwell-logo {
+    width: 200px;
+  }
+
+  .modal-bac-container {
+    padding-bottom: 0;
   }
 
   .action-ideas {
@@ -518,9 +536,9 @@ a {
   }
 
   .menu-icon-container {
-    position: absolute;
-    top: 20px;
-    right: 0px;
+    position: fixed;
+    top: 30px;
+    right: 15px;
     z-index: 2;
   }
 
@@ -535,9 +553,9 @@ a {
   }
 
   .dropdown-menu-container {
-    position: absolute;
-    top: -2px;
-    right: -14px;
+    position: fixed;
+    top: 20px;
+    right: 10px;
     background-color: white;
     z-index: 1;
     max-height: 0px;
@@ -568,6 +586,7 @@ a {
     line-height: 1.3;
     font-size: 20px;
     padding: 0px 5px;
+    margin-right: 10px;
   }
 
   iframe {
@@ -663,11 +682,12 @@ a {
   .social-link {
     height: 40px;
     width: 40px;
-    font-size: 23px;
+    border: 2px solid black;
   }
 
   .social-link-text {
-    top: 9px;
+    font-size: 25px;
+    top: 0px;
   }
 }
 

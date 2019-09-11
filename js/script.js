@@ -122,7 +122,6 @@ function setExhibitListeners() {
 }
 
 function openModal(evt, modalOpener) {
-  evt.stopPropagation();
   hideModals();
   const modalOpenerText = modalOpener.querySelector('.modal-open-text');
   if (modalOpenerText) {
@@ -139,9 +138,7 @@ function setModalOpenListeners() {
   const modalOpeners = document.getElementsByClassName("modal-open");
   for (let modalOpener of modalOpeners) {
     modalOpener.addEventListener('click', (evt) => {
-      openModal(evt, modalOpener);
-    });
-    modalOpener.addEventListener('touchstart', (evt) => {
+      evt.stopPropagation();
       openModal(evt, modalOpener);
       hideMenu();
     });
@@ -193,7 +190,7 @@ function setMenuIconListener() {
 }
 
 function setMenuCloseListener() {
-  window.addEventListener('touchstart', (evt) => {
+  window.addEventListener('click', (evt) => {
     if (isMenuOpen() && !isMenuTap(evt) && !isMenuIconTap(evt)) {
       hideMenu();
     }
