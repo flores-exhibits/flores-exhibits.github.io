@@ -226,13 +226,17 @@ a {
 
 .info-container {
   position: relative;
+  width: inherit;
+  display: inline-block;
 }
 
 .reader-info, .declaration-info {
-  position: absolute;
-  top: 0;
-  left: 0;
+  float: left;
   padding-top: 12px;
+}
+
+.reader-info {
+  margin-right: -400px;
 }
 
 .video-row {
@@ -380,6 +384,17 @@ a {
   vertical-align: top;
   position: relative;
   top: 8px;
+}
+
+@media only screen and (min-device-width : 480px) {
+  .exhibit-text {
+    display: inline-block;
+    width: 830px;
+  }
+
+  .exhibit-reader {
+    white-space: nowrap;
+  }
 }
 
 @media only screen and (max-device-width : 480px) {
