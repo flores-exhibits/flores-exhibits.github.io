@@ -105,7 +105,6 @@ function setExhibitListeners() {
       fadeElements(readerInfo, declarationInfo);
     });
     exhibit.addEventListener('click', (evt) => {
-      evt.stopPropagation();
       const exhibitSection = exhibit.parentNode;
       if (exhibitSection.classList.contains('exhibit-open')) {
         hideAllExhibits();
@@ -121,6 +120,10 @@ function setExhibitListeners() {
   }
 }
 
+function isMobile() {
+  return window.innerWidth <= 480;
+}
+
 function openModal(evt, modalOpener) {
   hideModals();
   const modalOpenerText = modalOpener.querySelector('.modal-open-text');
@@ -129,6 +132,9 @@ function openModal(evt, modalOpener) {
   }
   const targetModalId = modalOpener.dataset.modalid;
   const modal = document.getElementById(targetModalId);
+  if (isMobile()) {
+    modal.style.top = `${window.pageYOffset - 2}px`;
+  }
   modal.classList.add('modal-opened');
   modal.classList.add('modal-border');
 }
