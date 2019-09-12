@@ -201,22 +201,8 @@ function setMenuCloseListener() {
   });
 }
 
-const DEFAULT_ASPECT_RATIO = 16 / 9;
-
-function sizeIframes() {
-  const iframes = document.getElementsByTagName('iframe');
-  for (let iframe of iframes) {
-    const width = parseInt(getComputedStyle(iframe).width);
-    if (width !== 1280) {
-      const height = width / DEFAULT_ASPECT_RATIO;
-      iframe.height = height;
-    }
-  }
-}
-
 setExhibitListeners();
 setModalOpenListeners();
 setModalCloseListeners();
 setMenuIconListener();
 setMenuCloseListener();
-sizeIframes();
