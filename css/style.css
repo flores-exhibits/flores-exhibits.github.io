@@ -140,6 +140,10 @@ a {
   z-index: 10;
 }
 
+.social-link:hover {
+  opacity: 0.75;
+}
+
 .social-link {
   margin-bottom: 10px;
   height: 60px;
@@ -197,12 +201,12 @@ a {
 }
 
 .exhibit-text {
-  transition-property: color;
+  transition-property: opacity;
   transition-duration: 0.4s;
 }
 
 .exhibit:hover .exhibit-text {
-  color: #333333;
+  opacity: 0.75;
 }
 
 .exhibit-number {
@@ -302,7 +306,7 @@ a {
 }
 
 .credits-icons {
-  margin-top: 20px;
+  margin-top: 0;
   margin-right: 50px;
   margin-bottom: 20px;
 }
@@ -414,9 +418,7 @@ a {
 }
 
 .modal-logos {
-  padding-top: 80px;
   padding-bottom: 40px;
-  border-bottom: 1px solid black;
 }
 
 .modal-logo {
@@ -424,6 +426,7 @@ a {
 }
 
 .modal-credit {
+  border-top: 2px solid black;
   padding-top: 80px;
 }
 
@@ -466,7 +469,7 @@ a {
   }
 
   body {
-    margin-left: 10px;
+    margin-left: 14px;
     margin-right: 10px;
   }
 
@@ -491,6 +494,7 @@ a {
 
   .modal {
     margin-left: 0px;
+    margin-right: -6px;
   }
 
   .modal-content {
@@ -662,6 +666,10 @@ a {
     margin-bottom: 40px;
   }
 
+  .credits-description {
+    margin-right: 10px;
+  }
+
   .credits-description p {
     font-size: 18px;
     line-height: 1.4;
@@ -693,7 +701,7 @@ a {
   }
 
   .social-links {
-    right: 14px;
+    right: 16px;
   }
 
   .social-link {
