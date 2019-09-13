@@ -38,7 +38,13 @@
                       read by
                     </div>
                     <div class="exhibit-reader bold-italic">
-                      <%= exhibit.reader %>
+                      <% if (exhibit.readerLink) { %>
+                        <a href="<%= exhibit.readerLink %>">
+                          <%= exhibit.reader %>
+                        </a>
+                      <% } else { %>
+                        <%= exhibit.reader %>
+                      <% } %>
                     </div>
                     <div class="exhibit-title uppercase">
                       <%= exhibit.readerTitle %>
@@ -64,7 +70,13 @@
                   read by
                 </div>
                 <div class="mobile-exhibit-reader bold-italic">
-                  <%= exhibit.reader %>
+                  <% if (exhibit.readerLink) { %>
+                    <a href="<%= exhibit.readerLink %>">
+                      <%= exhibit.reader %>
+                    </a>
+                  <% } else { %>
+                    <%= exhibit.reader %>
+                  <% } %>
                 </div>
                 <div class="mobile-exhibit-title uppercase">
                   <%= exhibit.readerTitle %>
