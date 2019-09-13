@@ -454,7 +454,7 @@ a {
   }
 
   .reader-info div {
-    max-width: 600px;
+    max-width: calc(98vw - 1030px);
   }
 }
 
