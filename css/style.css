@@ -453,8 +453,8 @@ a {
     width: 830px;
   }
 
-  .exhibit-reader {
-    white-space: nowrap;
+  .reader-info div {
+    max-width: 600px;
   }
 }
 
