@@ -63,8 +63,8 @@ function findParentWithClassName(element, className) {
   return element;
 }
 
-function isExpanded(exhibit) {
-  return exhibit.parentNode.classList.contains('exhibit-open');
+function isExpanded(exhibitSection) {
+  return exhibitSection.classList.contains('exhibit-open');
 }
 
 const FADE_IN_CLASSES = ['animated', 'fadeIn'];
@@ -85,11 +85,28 @@ function hideAllExhibits() {
   }
 }
 
+function toggleExhibit(exhibitSection) {
+  if (isExpanded(exhibitSection)) {
+    if (exhibitSection.wistiaVideo) {
+      exhibitSection.wistiaVideo.pause();
+    }
+    hideAllExhibits();
+  } else {
+    hideAllExhibits();
+    exhibitSection.classList.add('exhibit-open');
+  }
+
+  const readerInfo = exhibitSection.querySelector('.reader-info');
+  const declarationInfo = exhibitSection.querySelector('.declaration-info');
+  fadeElements(readerInfo, declarationInfo);
+}
+
 function setExhibitListeners() {
   const exhibits = document.getElementsByClassName('exhibit');
   for (let exhibit of exhibits) {
+    const exhibitSection = exhibit.parentNode;
     exhibit.addEventListener('mouseenter', () => {
-      if (isExpanded(exhibit)) {
+      if (isExpanded(exhibitSection)) {
         return;
       };
       const readerInfo = exhibit.querySelector('.reader-info');
@@ -97,25 +114,23 @@ function setExhibitListeners() {
       fadeElements(declarationInfo, readerInfo);
     });
     exhibit.addEventListener('mouseleave', () => {
-      if (isExpanded(exhibit)) {
+      if (isExpanded(exhibitSection)) {
         return;
       };
       const readerInfo = exhibit.querySelector('.reader-info');
       const declarationInfo = exhibit.querySelector('.declaration-info');
       fadeElements(readerInfo, declarationInfo);
     });
-    exhibit.addEventListener('click', (evt) => {
-      const exhibitSection = exhibit.parentNode;
-      if (exhibitSection.classList.contains('exhibit-open')) {
-        hideAllExhibits();
-      } else {
-        hideAllExhibits();
-        exhibitSection.classList.add('exhibit-open');
-      }
+    exhibit.addEventListener('click', () => {
+      toggleExhibit(exhibitSection);
+    });
+  }
 
-      const readerInfo = exhibit.querySelector('.reader-info');
-      const declarationInfo = exhibit.querySelector('.declaration-info');
-      fadeElements(readerInfo, declarationInfo);
+  const mobileReaderSections = document.getElementsByClassName('mobile-reader-info');
+  for (let mobileReaderSection of mobileReaderSections) {
+    mobileReaderSection.addEventListener('click', () => {
+      const exhibitSection = mobileReaderSection.parentNode;
+      toggleExhibit(exhibitSection);
     });
   }
 }

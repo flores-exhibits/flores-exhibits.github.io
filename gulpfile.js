@@ -2,6 +2,25 @@ const fs = require('fs');
 const gulp = require('gulp');
 const template = require('gulp-template');
 
+function loadExhibits() {
+  const exhibitsTsv = fs.readFileSync('exhibits.tsv', 'utf8');
+  const exhibitsArr = exhibitsTsv.split('\r\n');
+  const headers = exhibitsArr[0].split('\t');
+  const exhibits = [];
+  for (let i = 1; i < exhibitsArr.length; i++) {
+    if (!exhibitsArr[i]) {
+      continue;
+    }
+    let exhibit = exhibitsArr[i].split('\t');
+    let exhibitObj = {};
+    for (let j = 0; j < exhibit.length; j++) {
+      exhibitObj[headers[j]] = exhibit[j];
+    }
+    exhibits.push(exhibitObj);
+  }
+  return exhibits;
+}
+
 gulp.task('build-html', () => {
   const aboutModal = fs.readFileSync('src/_about-modal.html', 'utf8');
   const head = fs.readFileSync('src/_head.html', 'utf8');
@@ -10,8 +29,7 @@ gulp.task('build-html', () => {
   const socialLinks = fs.readFileSync('src/_social-links.html', 'utf8');
   const topSection = fs.readFileSync('src/_top-section.html', 'utf8');
   const takeActionModal = fs.readFileSync('src/_take-action-modal.html', 'utf8');
-  const exhibitsStr = fs.readFileSync('exhibits.json', 'utf8');
-  const exhibits = JSON.parse(exhibitsStr);
+  const exhibits = loadExhibits();
   return gulp.src('src/index.html')
     .pipe(template({
       credits,
@@ -28,7 +46,7 @@ gulp.task('build-html', () => {
 
 gulp.task('watch', () => {
   gulp.watch(
-    ['src/*.html', 'exhibits.json'],
+    ['src/*.html', 'exhibits.tsv'],
     { ignoreInitial: false },
     gulp.series('build-html')
    );
