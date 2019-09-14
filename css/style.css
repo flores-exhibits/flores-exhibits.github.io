@@ -198,6 +198,8 @@ a {
 .exhibit-text {
   transition-property: opacity;
   transition-duration: 0.4s;
+  -webkit-transition-property: opacity;
+  -webkit-transition-duration: 0.4s;
   vertical-align: top;
 }
 
@@ -251,6 +253,8 @@ a {
   max-height: 0px;
   transition-property: max-height;
   transition-duration: 0.5s;
+  -webkit-transition-property: max-height;
+  -webkit-transition-duration: 0.5s;
   overflow-y: hidden;
 }
 
@@ -363,6 +367,8 @@ a {
   background-color: white;
   transition-property: max-height;
   transition-duration: 1s;
+  -webkit-transition-property: max-height;
+  -webkit-transition-duration: 1s;
   overflow: hidden;
 }
 
@@ -583,6 +589,8 @@ a {
   .menu-icon {
     transition-property: transform;
     transition-duration: 0.5s;
+    -webkit-transition-property: transform;
+    -webkit-transition-duration: 0.5s;
     width: 40px;
   }
 
@@ -600,6 +608,8 @@ a {
     overflow: hidden;
     transition-property: max-height;
     transition-duration: 0.5s;
+    -webkit-transition-property: max-height;
+    -webkit-transition-duration: 0.5s;
   }
 
   .dropdown-menu-container-open {
