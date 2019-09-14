@@ -197,7 +197,7 @@ a {
 }
 
 .exhibit:hover {
-  cursor: pointer;
+  cursor: url(/img/cursor.png) 2 2, pointer;
 }
 
 .exhibit-text {
@@ -493,6 +493,11 @@ a {
 
   .top-section {
     padding: 0;
+  }
+
+  .tap-to-watch {
+    margin-bottom: 30px;
+    margin-left: 10px;
   }
 
   h1 {
