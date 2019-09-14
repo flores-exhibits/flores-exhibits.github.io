@@ -189,22 +189,19 @@ a {
   vertical-align: text-top;
   padding-top: 30px;
   padding-bottom: 30px;
-}
-
-.exhibit:hover {
-  cursor: pointer;
-}
-
-.exhibit-text {
   transition-property: opacity;
   transition-duration: 0.4s;
   -webkit-transition-property: opacity;
   -webkit-transition-duration: 0.4s;
-  vertical-align: top;
 }
 
-.exhibit:hover .exhibit-text {
+.exhibit:hover {
+  cursor: pointer;
   opacity: 0.75;
+}
+
+.exhibit-text {
+  vertical-align: top;
 }
 
 .exhibit-number {
@@ -482,7 +479,7 @@ a {
   }
 
   body {
-    margin-left: 10px;
+    margin-left: 14px;
     margin-right: 10px;
     margin-bottom: 200px;
   }
@@ -513,7 +510,7 @@ a {
 
   .modal {
     margin-left: 0px;
-    margin-right: -6px;
+    margin-right: -1px;
   }
 
   .modal-content {
@@ -582,7 +579,7 @@ a {
   .menu-icon-container {
     position: fixed;
     top: 30px;
-    right: 15px;
+    right: 20px;
     z-index: 2;
   }
 
@@ -601,7 +598,7 @@ a {
   .dropdown-menu-container {
     position: fixed;
     top: 20px;
-    right: 10px;
+    right: 15px;
     background-color: white;
     z-index: 1;
     max-height: 0px;
@@ -621,7 +618,7 @@ a {
   }
 
   .dropdown-menu {
-    padding: 20px 50px 20px 20px;
+    padding: 35px 50px 20px 20px;
   }
 
   .dropdown-menu li {
@@ -652,6 +649,7 @@ a {
 
   .exhibit-number {
     font-size: 30px;
+    top: 4px;
   }
 
   .mobile-reader-info div {
@@ -732,7 +730,7 @@ a {
   }
 
   .social-links {
-    right: 16px;
+    right: 20px;
   }
 
   .social-link {
