@@ -146,8 +146,8 @@ a {
 
 .social-link {
   margin-bottom: 10px;
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   background-color: white;
 }
@@ -192,7 +192,7 @@ a {
 }
 
 .exhibit:hover {
-  cursor: url(/img/cursor.png) 2 2, pointer;
+  cursor: pointer;
 }
 
 .exhibit-text {
@@ -474,7 +474,7 @@ a {
   }
 
   body {
-    margin-left: 14px;
+    margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 200px;
   }
@@ -541,7 +541,7 @@ a {
   }
 
   .modal-logo {
-    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   .modal-logo img {
@@ -621,7 +621,7 @@ a {
     margin-bottom: 20px;
     line-height: 1.3;
     font-size: 20px;
-    padding: 0px 5px;
+    padding: 0px 10px;
     margin-right: 10px;
   }
 
@@ -631,7 +631,7 @@ a {
 
   .exhibit {
     padding-left: 10px;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
   }
 
   .exhibit-large {
@@ -656,6 +656,10 @@ a {
 
   .mobile-exhibit-reader {
     font-size: 20px;
+  }
+
+  .mobile-exhibit-title {
+    line-height: 1.4;
   }
 
   .credits {
