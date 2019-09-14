@@ -232,6 +232,7 @@ a {
 
 .exhibit-title {
   font-size: 20px;
+  line-height: 1.3;
 }
 
 .exhibit-large {
@@ -270,7 +271,6 @@ a {
   margin-top: 60px;
   overflow: hidden;
   position: relative;
-  padding: 0 25px;
 }
 
 .credits-dot-container {
@@ -281,7 +281,6 @@ a {
 
 .credits-description {
   padding-bottom: 40px;
-  margin-right: 50px;
   display: block;
 }
 
@@ -304,8 +303,18 @@ a {
 
 .credits-icons {
   margin-top: 0;
-  margin-right: 50px;
   margin-bottom: 20px;
+}
+
+.credits-butter {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 2px solid black;
+  font-size: 24px;
+}
+
+.credits-butter a {
+  text-decoration: underline;
 }
 
 .credits-presented-by {
@@ -471,6 +480,7 @@ a {
   body {
     margin-left: 14px;
     margin-right: 10px;
+    margin-bottom: 200px;
   }
 
   #content {
@@ -686,6 +696,10 @@ a {
     margin-bottom: 10px;
   }
 
+  .credits-butter {
+    font-size: 20px;
+  }
+
   .credits-presented-by {
     margin-bottom: 15px;
   }
@@ -718,7 +732,7 @@ a {
 
 @media only screen and (max-device-width : 320px) {
   .exhibit-large {
-    font-size: 48px;
+    font-size: 46px;
   }
 
   .exhibit-number {
