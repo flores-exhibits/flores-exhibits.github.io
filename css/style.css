@@ -203,6 +203,7 @@ a {
 .exhibit-text {
   transition-property: opacity;
   transition-duration: 0.4s;
+  vertical-align: top;
 }
 
 .exhibit:hover .exhibit-text {
