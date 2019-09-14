@@ -303,8 +303,20 @@ a {
   margin-bottom: 20px;
 }
 
+.credits-icon-container {
+  padding-left: 10px;
+}
+
+.credits-icon {
+  margin-right: 40px;
+}
+
+.bac-icon-container {
+  margin-right: 30px;
+}
+
 .credits-butter {
-  margin-top: 40px;
+  margin-top: 20px;
   padding-top: 40px;
   border-top: 2px solid black;
   font-size: 24px;
@@ -334,25 +346,27 @@ a {
 }
 
 .amplify-logo {
-  width: 250px;
-  top: -30px;
+  width: 200px;
+  top: -20px;
   position: relative;
 }
 
 .amplify-logo-modal {
-  width: 250px;
-  top: -10px;
+  width: 220px;
+  top: -5px;
   position: relative;
 }
 
 .cisc-logo {
   width: 260px;
+  max-width: 100%;
 }
 
 .irc-logo {
   position: relative;
   top: 10px;
   width: 250px;
+  max-width: 100%;
 }
 
 .modal {
@@ -422,12 +436,14 @@ a {
   top: 6px;
 }
 
-.modal-logos {
-  padding-bottom: 40px;
-}
-
 .modal-logo {
   margin-bottom: 40px;
+  margin-right: 40px;
+}
+
+.modal-amplify-container {
+  position: relative;
+  top: -20px;
 }
 
 .modal-credit {
@@ -541,7 +557,7 @@ a {
   }
 
   .modal-logos {
-    padding-top: 20px;
+    padding-top: 0px;
     padding-bottom: 0px;
   }
 
@@ -564,6 +580,7 @@ a {
 
   .modal-bac-container {
     padding-bottom: 0;
+    margin-top: 5px;
   }
 
   .action-ideas {
@@ -709,6 +726,11 @@ a {
   .credits-icon {
     padding-bottom: 20px;
     margin-bottom: 10px;
+  }
+
+  .bac-icon-container {
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   .credits-butter {
