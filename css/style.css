@@ -149,17 +149,12 @@ a {
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  border: 3px solid black;
-  text-align: center;
-  font-size: 35px;
   background-color: white;
 }
 
-.social-link-text {
-  position: relative;
-  top: 11px;
-  font-family: "GT-America-Condensed-Black";
-  font-size: 27px;
+.social-link img {
+  height: 100%;
+  width: 100%;
 }
 
 .social-link:hover {
@@ -727,12 +722,6 @@ a {
   .social-link {
     height: 40px;
     width: 40px;
-    border: 2px solid black;
-  }
-
-  .social-link-text {
-    font-size: 25px;
-    top: 0px;
   }
 }
 
