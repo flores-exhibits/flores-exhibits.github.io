@@ -247,9 +247,6 @@ a {
 .reader-info, .declaration-info {
   float: left;
   padding-top: 12px;
-}
-
-.reader-info {
   margin-right: -1000px;
 }
 
@@ -454,6 +451,10 @@ a {
   }
 
   .reader-info div {
+    max-width: calc(98vw - 1030px);
+  }
+
+  .declaration-info div {
     max-width: calc(98vw - 1030px);
   }
 }
