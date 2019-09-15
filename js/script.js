@@ -226,7 +226,10 @@ function setupClipboard() {
   new ClipboardJS('.copy-icon');
 }
 
-function closeShareBoxes() {
+function closeShareBoxes(evt) {
+  if (eventHasTargetClass(evt, 'share-box')) {
+    return;
+  }
   const shareBoxes = document.getElementsByClassName('share-box');
   for (let shareBox of shareBoxes) {
     if (!shareBox.classList.contains('hidden')) {
@@ -240,12 +243,6 @@ function closeShareBoxes() {
 }
 
 function setupCopyListeners() {
-  const shareBoxes = document.getElementsByClassName('share-box');
-  for (const shareBox of shareBoxes) {
-    shareBox.addEventListener('click', (evt) => {
-      evt.stopPropagation();
-    });
-  }
   const shareIcons = document.getElementsByClassName('share-icon');
   for (const shareIcon of shareIcons) {
     shareIcon.addEventListener('click', (evt) => {
@@ -257,7 +254,6 @@ function setupCopyListeners() {
   const copyIcons = document.getElementsByClassName('copy-icon');
   for (const copyIcon of copyIcons) {
     copyIcon.addEventListener('click', (evt) => {
-      evt.stopPropagation();
       copyIcon.classList.add('link-copied');
     });
   }
@@ -283,7 +279,6 @@ setModalOpenListeners();
 setModalCloseListeners();
 setMenuIconListener();
 setMenuCloseListener();
-setupClipboard();
 setupCopyListeners();
+setupClipboard();
 checkForVideoIdInUrl();
-
