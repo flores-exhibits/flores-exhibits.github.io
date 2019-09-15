@@ -23,7 +23,7 @@
           Tap the Exhibit To Watch
         </div>
         <% _.forEach(exhibits, function(exhibit) { %>
-          <div class="exhibit-section">
+          <div class="exhibit-section" id="exhibit-<%= exhibit.number %>">
             <div class="exhibit row">
               <div class="col-xs">
                 <div class="exhibit-large exhibit-text condensed-black uppercase">
@@ -103,14 +103,14 @@
                   <div class="share-box hidden">
                     <div class="share-text uppercase bold">Share</div>
                     <div class="share-url">
-                      <a href="https://www.flores-exhibits.org#<%= exhibit.number %>">
-                        https://www.flores-exhibits.org#<%= exhibit.number %>
+                      <a href="https://www.flores-exhibits.org/#<%= exhibit.number %>">
+                        https://www.flores-exhibits.org/#<%= exhibit.number %>
                       </a>
                     </div>
                     <div class="copy-icon-container">
                       <span
                         class="copy-icon dot"
-                        data-clipboard-text="https://www.flores-exhibits.org#<%= exhibit.number %>"
+                        data-clipboard-text="https://www.flores-exhibits.org/#<%= exhibit.number %>"
                       >
                         <span class="copy-icon-text bold-italic uppercase">
                           Copy<br>Link

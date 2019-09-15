@@ -265,6 +265,19 @@ function setupCopyListeners() {
   window.addEventListener('click', closeShareBoxes);
 }
 
+function checkForVideoIdInUrl() {
+  const videoId = window.location.hash.substr(1);
+  if (!videoId) {
+    return;
+  }
+  const exhibitSection = document.getElementById(`exhibit-${videoId}`);
+  if (!exhibitSection) {
+    return;
+  }
+  exhibitSection.classList.add('exhibit-open');
+  exhibitSection.scrollIntoView(true);
+}
+
 setExhibitListeners();
 setModalOpenListeners();
 setModalCloseListeners();
@@ -272,3 +285,5 @@ setMenuIconListener();
 setMenuCloseListener();
 setupClipboard();
 setupCopyListeners();
+checkForVideoIdInUrl();
+
