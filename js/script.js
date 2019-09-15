@@ -2,6 +2,10 @@ function isModalClick(evt) {
   return eventHasTargetClass(evt, 'modal-content');
 }
 
+function isModalOpenerClick(evt) {
+  return eventHasTargetClass(evt, 'modal-open');
+}
+
 function isMenuTap(evt) {
   return eventHasTargetClass(evt, 'dropdown-menu-container');
 }
@@ -163,7 +167,6 @@ function setModalOpenListeners() {
   const modalOpeners = document.getElementsByClassName("modal-open");
   for (let modalOpener of modalOpeners) {
     modalOpener.addEventListener('click', (evt) => {
-      evt.stopPropagation();
       openModal(evt, modalOpener);
       hideMenu();
     });
@@ -180,7 +183,7 @@ function setModalCloseListeners() {
   }
 
   window.addEventListener('click', (evt) => {
-    if (isModalVisible() && !isModalClick(evt)) {
+    if (isModalVisible() && !isModalClick(evt) && !isModalOpenerClick(evt)) {
       hideModals();
     }
   });
@@ -220,7 +223,7 @@ function setMenuCloseListener() {
       hideMenu();
     }
 
-    if (isModalVisible() && !isModalClick(evt)) {
+    if (isModalVisible() && !isModalClick(evt) && !isModalOpenerClick(evt)) {
       hideModals();
     }
   });
