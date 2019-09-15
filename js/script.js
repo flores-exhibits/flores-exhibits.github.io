@@ -90,6 +90,10 @@ function toggleExhibit(exhibitSection) {
     if (exhibitSection.wistiaVideo) {
       exhibitSection.wistiaVideo.pause();
     }
+    const linkCopied = exhibitSection.querySelector('.link-copied');
+    if (linkCopied) {
+      linkCopied.classList.remove('link-copied');
+    }
     hideAllExhibits();
   } else {
     hideAllExhibits();
