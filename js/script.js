@@ -231,6 +231,10 @@ function closeShareBoxes() {
   for (let shareBox of shareBoxes) {
     if (!shareBox.classList.contains('hidden')) {
       shareBox.classList.add('hidden');
+      const linkCopied = shareBox.querySelector('.link-copied');
+      if (linkCopied) {
+        linkCopied.classList.remove('link-copied');
+      }
     }
   }
 }
@@ -239,16 +243,22 @@ function setupCopyListeners() {
   const shareBoxes = document.getElementsByClassName('share-box');
   for (const shareBox of shareBoxes) {
     shareBox.addEventListener('click', (evt) => {
-      console.log('triggered on share box');
       evt.stopPropagation();
     });
   }
-  const copyIcons = document.getElementsByClassName('share-icon');
+  const shareIcons = document.getElementsByClassName('share-icon');
+  for (const shareIcon of shareIcons) {
+    shareIcon.addEventListener('click', (evt) => {
+      evt.stopPropagation();
+      const shareBox = shareIcon.parentNode.querySelector('.share-box');
+      shareBox.classList.remove('hidden');
+    });
+  }
+  const copyIcons = document.getElementsByClassName('copy-icon');
   for (const copyIcon of copyIcons) {
     copyIcon.addEventListener('click', (evt) => {
       evt.stopPropagation();
-      const shareBox = copyIcon.parentNode.querySelector('.share-box');
-      shareBox.classList.remove('hidden');
+      copyIcon.classList.add('link-copied');
     });
   }
 

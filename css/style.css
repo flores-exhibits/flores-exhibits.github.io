@@ -289,23 +289,54 @@ a {
   text-decoration: underline;
 }
 
+.share-url a:hover {
+  opacity: 0.75;
+}
+
 .copy-icon {
-  width: 60px;
-  height: 60px;
+  width: 62px;
+  height: 62px;
 }
 
 .copy-icon-container {
   position: absolute;
   top: 10px;
   right: 10px;
+  font-size: 15px;
 }
 
-.copy-icon-text {
+.copy-icon-text, .link-copied-text {
   color: white;
   text-align: center;
   position: relative;
-  top: 14px;
-  left: 10px;
+  top: 16px;
+  left: 12px;
+}
+
+.copy-icon .link-copied-text {
+  display: none;
+}
+
+.link-copied {
+  opacity: 0.75;
+}
+
+.link-copied .link-copied-text {
+  display: block;
+}
+
+.link-copied .copy-icon-text {
+  display: none;
+}
+
+.link-copied-text {
+  left: 0px;
+}
+
+.share-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .share-icon:hover, .copy-icon:hover {
