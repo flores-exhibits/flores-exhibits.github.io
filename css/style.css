@@ -200,6 +200,10 @@ a {
   opacity: 0.75;
 }
 
+.exhibit a {
+  text-decoration: underline;
+}
+
 .exhibit-text {
   vertical-align: top;
 }
@@ -253,6 +257,60 @@ a {
   -webkit-transition-property: max-height;
   -webkit-transition-duration: 0.5s;
   overflow-y: hidden;
+  position: relative;
+}
+
+.video-content {
+  width: 95%;
+}
+
+.share-section {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.share-box {
+  background-color: white;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  border: 2px solid black;
+  width: 330px;
+}
+
+.share-text {
+  padding-bottom: 10px;
+}
+
+.share-url a {
+  text-decoration: underline;
+}
+
+.copy-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.copy-icon-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.copy-icon-text {
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 14px;
+  left: 10px;
+}
+
+.share-icon:hover, .copy-icon:hover {
+  opacity: 0.75;
+  cursor: pointer;
 }
 
 .exhibit-open .video-row {

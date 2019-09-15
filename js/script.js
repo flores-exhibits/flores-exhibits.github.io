@@ -222,8 +222,43 @@ function setMenuCloseListener() {
   });
 }
 
+function setupClipboard() {
+  new ClipboardJS('.copy-icon');
+}
+
+function closeShareBoxes() {
+  const shareBoxes = document.getElementsByClassName('share-box');
+  for (let shareBox of shareBoxes) {
+    if (!shareBox.classList.contains('hidden')) {
+      shareBox.classList.add('hidden');
+    }
+  }
+}
+
+function setupCopyListeners() {
+  const shareBoxes = document.getElementsByClassName('share-box');
+  for (const shareBox of shareBoxes) {
+    shareBox.addEventListener('click', (evt) => {
+      console.log('triggered on share box');
+      evt.stopPropagation();
+    });
+  }
+  const copyIcons = document.getElementsByClassName('share-icon');
+  for (const copyIcon of copyIcons) {
+    copyIcon.addEventListener('click', (evt) => {
+      evt.stopPropagation();
+      const shareBox = copyIcon.parentNode.querySelector('.share-box');
+      shareBox.classList.remove('hidden');
+    });
+  }
+
+  window.addEventListener('click', closeShareBoxes);
+}
+
 setExhibitListeners();
 setModalOpenListeners();
 setModalCloseListeners();
 setMenuIconListener();
 setMenuCloseListener();
+setupClipboard();
+setupCopyListeners();

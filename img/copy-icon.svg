@@ -1,0 +1,11 @@
+<svg width="62px" height="62px" viewBox="0 0 62 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="HOME-player-open---share-open" transform="translate(-1274.000000, -1699.000000)">
+            <circle id="Oval" fill="#000000" cx="1305" cy="1730" r="31"></circle>
+            <text id="COPY-LINK" font-family="Helvetica" font-size="13" font-weight="normal" letter-spacing="-0.325" fill="#FFFFFF">
+                <tspan x="1290.90205" y="1729">COPY</tspan>
+                <tspan x="1290.69956" y="1761">LINK</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
