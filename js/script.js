@@ -11,14 +11,18 @@ function isMenuIconTap(evt) {
 }
 
 function eventHasTargetClass(evt, className) {
+  return Boolean(getTargetParentWithClass(evt, className));
+}
+
+function getTargetParentWithClass(evt, className) {
   let target = evt.target;
   while (target != document) {
     if (target.classList.contains(className)) {
-      return true;
+      return target;
     }
     target = target.parentNode;
   }
-  return false;
+  return null;
 }
 
 function hideModals() {
@@ -125,18 +129,14 @@ function setExhibitListeners() {
       const declarationInfo = exhibit.querySelector('.declaration-info');
       fadeElements(readerInfo, declarationInfo);
     });
-    exhibit.addEventListener('click', () => {
-      toggleExhibit(exhibitSection);
-    });
   }
 
-  const mobileReaderSections = document.getElementsByClassName('mobile-reader-info');
-  for (let mobileReaderSection of mobileReaderSections) {
-    mobileReaderSection.addEventListener('click', () => {
-      const exhibitSection = mobileReaderSection.parentNode;
+  window.addEventListener('click', (evt) => {
+    if (eventHasTargetClass(evt, 'exhibit') || eventHasTargetClass(evt, 'mobile-reader-info')) {
+      const exhibitSection = getTargetParentWithClass(evt, 'exhibit-section');
       toggleExhibit(exhibitSection);
-    });
-  }
+    }
+  });
 }
 
 function isMobile() {
@@ -231,7 +231,7 @@ function setupClipboard() {
 }
 
 function closeShareBoxes(evt) {
-  if (eventHasTargetClass(evt, 'share-box')) {
+  if (eventHasTargetClass(evt, 'share-box') || eventHasTargetClass(evt, 'share-icon')) {
     return;
   }
   const shareBoxes = document.getElementsByClassName('share-box');
@@ -247,20 +247,17 @@ function closeShareBoxes(evt) {
 }
 
 function setupCopyListeners() {
-  const shareIcons = document.getElementsByClassName('share-icon');
-  for (const shareIcon of shareIcons) {
-    shareIcon.addEventListener('click', (evt) => {
-      evt.stopPropagation();
-      const shareBox = shareIcon.parentNode.querySelector('.share-box');
+  window.addEventListener('click', (evt) => {
+    if (eventHasTargetClass(evt, 'share-icon')) {
+      const shareSection = getTargetParentWithClass(evt, 'share-section');
+      const shareBox = shareSection.querySelector('.share-box');
       shareBox.classList.remove('hidden');
-    });
-  }
-  const copyIcons = document.getElementsByClassName('copy-icon');
-  for (const copyIcon of copyIcons) {
-    copyIcon.addEventListener('click', (evt) => {
+    }
+    if (eventHasTargetClass(evt, 'copy-icon')) {
+      const copyIcon = getTargetParentWithClass(evt, 'copy-icon');
       copyIcon.classList.add('link-copied');
-    });
-  }
+    }
+  });
 
   window.addEventListener('click', closeShareBoxes);
 }
