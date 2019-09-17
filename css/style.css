@@ -380,8 +380,12 @@ a {
   margin-bottom: 20px;
 }
 
+.credits-description p:last-child {
+  margin-bottom: 0px;
+}
+
 .credits-description-text {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .credits-icons {
@@ -497,15 +501,15 @@ a {
   padding-left: 0;
   padding-right: 0;
   border-bottom: 2px solid black;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
 }
 
 .modal-body p {
   margin-bottom: 20px;
 }
 
-.contact-us {
-  margin-bottom: 0 !important;
+.modal-body p:last-child {
+  margin-bottom: 0px;
 }
 
 /* The Close Button */
@@ -833,10 +837,6 @@ a {
   .credits-dot-container {
     left: 10px;
     top: 2px;
-  }
-
-  .credits-description-text {
-    margin-bottom: 40px;
   }
 
   .credits-description {
