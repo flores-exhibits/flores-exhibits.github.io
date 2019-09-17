@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<%= head %>
+<body>
+  <div id="content">
+    <script>
+    window._wq = window._wq || [];
+    _wq.push({ id: "_all", onReady: function(video) {
+      let container = video.container;
+      while (!container.classList.contains('exhibit-section')) {
+        container = container.parentNode;
+      }
+      container.wistiaVideo = video;
+    }});
+    </script>
+    <%= navbar %>
+    <div id="main-content">
+      <%= aboutModal %>
+      <%= takeActionModal %>
+      <div class="top-section row">
+        <div class="mobile-only menu-icon-container">
+          <img class="menu-icon" src="/img/menu-icon.svg">
+        </div>
+        <div class="mobile-only dropdown-menu-container">
+          <ul class="dropdown-menu">
+            <li class="uppercase modal-open" data-modalId="about-modal">
+              About
+            </li>
+            <li
+              class="uppercase modal-open"
+              data-modalId="take-action-modal"
+            >
+              Take Action
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="exhibits">
+        <div class="exhibit-open" id="exhibit-<%= exhibit.number %>">
+          <div class="exhibit row">
+            <div class="col-xs">
+              <div class="exhibit-large exhibit-text condensed-black uppercase">
+                Exhibit<span class="desktop-only">&nbsp;</span>
+                <span class="exhibit-number">
+                  #
+                </span>
+                <span class="expanded-black">
+                  <%= exhibit.number %>
+                </span>
+              </div>
+              <div class="info-container desktop-only">
+                <div class="reader-info">
+                  <div class="exhibit-read-by zirkon-book">
+                    read by
+                  </div>
+                  <div class="exhibit-reader bold-italic">
+                    <% if (exhibit.readerLink) { %>
+                      <a href="<%= exhibit.readerLink %>" target="_blank">
+                        <%= exhibit.reader %>
+                      </a>
+                    <% } else { %>
+                      <%= exhibit.reader %>
+                    <% } %>
+                  </div>
+                  <div class="exhibit-title uppercase">
+                    <%= exhibit.readerTitle %>
+                  </div>
+                </div>
+                <div class="declaration-info hidden">
+                  <div class="exhibit-read-by zirkon-medium">
+                    declaration of
+                  </div>
+                  <div class="exhibit-reader bold-italic">
+                    <%= exhibit.declarationName %>
+                  </div>
+                  <div class="exhibit-title uppercase">
+                    <%= exhibit.declarationInfo %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mobile-reader-info row mobile-only">
+            <div class="col-xs">
+              <div class="mobile-exhibit-read-by zirkon-medium">
+                read by
+              </div>
+              <div class="mobile-exhibit-reader bold-italic">
+                <% if (exhibit.readerLink) { %>
+                  <a href="<%= exhibit.readerLink %>">
+                    <%= exhibit.reader %>
+                  </a>
+                <% } else { %>
+                  <%= exhibit.reader %>
+                <% } %>
+              </div>
+              <div class="mobile-exhibit-title uppercase">
+                <%= exhibit.readerTitle %>
+              </div>
+            </div>
+          </div>
+          <div class="video-row row">
+            <div class="col-xs">
+              <div class="video-content">
+                <script src="https://fast.wistia.com/embed/medias/<%= exhibit.wistiaId %>.jsonp" async></script>
+                <div class="wistia_responsive_padding" style="padding:52.71% 0 0 0;position:relative;">
+                  <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                    <div class="wistia_embed wistia_async_<%= exhibit.wistiaId %> videoFoam=true" style="height:100%;position:relative;width:100%">
+                      <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/<%= exhibit.wistiaId %>/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="share-section desktop-only">
+                <img class="share-icon" src="/img/share-icon.svg">
+                <div class="share-box hidden">
+                  <div class="share-text uppercase bold">Share</div>
+                  <div class="share-url">
+                    <a href="https://www.flores-exhibits.org/#<%= exhibit.number %>">
+                      https://www.flores-exhibits.org/#<%= exhibit.number %>
+                    </a>
+                  </div>
+                  <div class="copy-icon-container">
+                    <span
+                      class="copy-icon dot"
+                      data-clipboard-text="https://www.flores-exhibits.org/#<%= exhibit.number %>"
+                    >
+                      <span class="copy-icon-text bold-italic uppercase">
+                        Copy<br>Link
+                      </span>
+                      <span class="link-copied-text bold-italic uppercase">
+                        Link<br>Copied
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="share-section-mobile mobile-only">
+                <div class="share-text uppercase bold">Share</div><br>
+                <div class="share-url">
+                  <a href="https://www.flores-exhibits.org/#<%= exhibit.number %>">
+                    www.flores-exhibits.org/#<%= exhibit.number %>
+                  </a>
+                </div>
+                <div class="copy-icon-container">
+                  <span
+                    class="copy-icon dot"
+                    data-clipboard-text="https://www.flores-exhibits.org/#<%= exhibit.number %>"
+                  >
+                    <span class="copy-icon-text bold-italic uppercase">
+                      Copy<br>Link
+                    </span>
+                    <span class="link-copied-text bold-italic uppercase">
+                      Link<br>Copied
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= socialLinks %>
+  <script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>
