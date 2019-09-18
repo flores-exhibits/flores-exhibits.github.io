@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "gulp-rename": "^1.4.0",
-    "gulp-template": "^5.0.0"
+    "gulp-template": "^5.0.0",
+    "punycode": "^2.1.1"
   }
 }

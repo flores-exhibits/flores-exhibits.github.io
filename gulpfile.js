@@ -3,6 +3,17 @@ const gulp = require('gulp');
 const template = require('gulp-template');
 const rename = require("gulp-rename");
 
+const SPECIAL_CHARS = {
+  'é': '&eacute;'
+};
+
+function formatStr(str) {
+  for (let char of Object.keys(SPECIAL_CHARS)) {
+    str = str.replace(new RegExp(char, 'g'), SPECIAL_CHARS[char]);
+  }
+  return str;
+}
+
 function loadExhibits() {
   const exhibitsTsv = fs.readFileSync('exhibits.tsv', 'utf8');
   const exhibitsArr = exhibitsTsv.split('\r\n');
@@ -15,7 +26,7 @@ function loadExhibits() {
     let exhibit = exhibitsArr[i].split('\t');
     let exhibitObj = {};
     for (let j = 0; j < exhibit.length; j++) {
-      exhibitObj[headers[j]] = exhibit[j];
+      exhibitObj[headers[j]] = formatStr(exhibit[j]);
     }
     exhibits.push(exhibitObj);
   }

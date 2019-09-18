@@ -106,6 +106,10 @@ function toggleExhibit(exhibitSection) {
   } else {
     hideAllExhibits();
     exhibitSection.classList.add('exhibit-open');
+    const iframe = exhibitSection.querySelector('iframe');
+    if (iframe.src === 'about:blank') {
+      iframe.src = iframe.getAttribute('data-wistia-id');
+    }
   }
 
   const readerInfo = exhibitSection.querySelector('.reader-info');
