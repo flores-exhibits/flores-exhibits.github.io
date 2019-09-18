@@ -100,16 +100,20 @@ function hideAllExhibits() {
   }
 }
 
+function openExhibit(exhibit) {
+  exhibit.classList.add('exhibit-open');
+  const iframe = exhibit.querySelector('iframe');
+  if (iframe.src === 'about:blank') {
+    iframe.src = iframe.getAttribute('data-wistia-id');
+  }
+}
+
 function toggleExhibit(exhibitSection) {
   if (isExpanded(exhibitSection)) {
     hideAllExhibits();
   } else {
     hideAllExhibits();
-    exhibitSection.classList.add('exhibit-open');
-    const iframe = exhibitSection.querySelector('iframe');
-    if (iframe.src === 'about:blank') {
-      iframe.src = iframe.getAttribute('data-wistia-id');
-    }
+    openExhibit(exhibitSection);
   }
 
   const readerInfo = exhibitSection.querySelector('.reader-info');
@@ -278,7 +282,7 @@ function checkForVideoIdInUrl() {
   if (!exhibitSection) {
     return;
   }
-  exhibitSection.classList.add('exhibit-open');
+  openExhibit(exhibitSection);
   exhibitSection.scrollIntoView(true);
 }
 
