@@ -45,7 +45,7 @@ gulp.task('build-html', () => {
     .pipe(gulp.dest('./'))
 });
 
-gulp.task('build-multipage', () => {
+gulp.task('build-iframe-version', () => {
   const aboutModal = fs.readFileSync('src/_about-modal.html', 'utf8');
   const head = fs.readFileSync('src/_head.html', 'utf8');
   const credits = fs.readFileSync('src/_credits.html', 'utf8');
@@ -54,7 +54,7 @@ gulp.task('build-multipage', () => {
   const topSection = fs.readFileSync('src/_top-section.html', 'utf8');
   const takeActionModal = fs.readFileSync('src/_take-action-modal.html', 'utf8');
   const exhibits = loadExhibits();
-  return gulp.src('src/multipage.html')
+  return gulp.src('src/iframe.html')
     .pipe(template({
       credits,
       exhibits,
@@ -110,6 +110,6 @@ gulp.task('watch', () => {
   gulp.watch(
     ['src/*.html', 'exhibits.tsv'],
     { ignoreInitial: false },
-    gulp.series('build-html', 'build-exhibits-html', 'build-multipage')
+    gulp.series('build-html', 'build-exhibits-html', 'build-iframe-version')
    );
 });
