@@ -89,15 +89,15 @@ function fadeElements(elToShow, elToHide) {
 function hideAllExhibits() {
   const exhibits = document.getElementsByClassName('exhibit-open');
   for (let exhibit of exhibits) {
+    if (exhibit.wistiaVideo) {
+      exhibit.wistiaVideo.pause();
+    }
     exhibit.classList.remove('exhibit-open');
   }
 }
 
 function toggleExhibit(exhibitSection) {
   if (isExpanded(exhibitSection)) {
-    if (exhibitSection.wistiaVideo) {
-      exhibitSection.wistiaVideo.pause();
-    }
     const linkCopied = exhibitSection.querySelector('.link-copied');
     if (linkCopied) {
       linkCopied.classList.remove('link-copied');
