@@ -93,15 +93,15 @@ function hideAllExhibits() {
       exhibit.wistiaVideo.pause();
     }
     exhibit.classList.remove('exhibit-open');
+    const linkCopied = exhibit.querySelector('.link-copied');
+    if (linkCopied) {
+      linkCopied.classList.remove('link-copied');
+    }
   }
 }
 
 function toggleExhibit(exhibitSection) {
   if (isExpanded(exhibitSection)) {
-    const linkCopied = exhibitSection.querySelector('.link-copied');
-    if (linkCopied) {
-      linkCopied.classList.remove('link-copied');
-    }
     hideAllExhibits();
   } else {
     hideAllExhibits();
