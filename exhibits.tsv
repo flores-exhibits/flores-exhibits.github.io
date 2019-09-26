@@ -1,5 +1,5 @@
 number	reader	readerTitle	readerLink	wistiaId	declarationName	declarationInfo
-03	David Gomez	President, Hostos Community College		m6m0p1cvv7	"J."	age: 5
+03	David Gomez	President, Hostos Community College		m6m0p1cvv7	"J."	age: 5  
 04	Jeff Chase	Former Immigration Judge		va16shrrix	"J."	age: 16, with fiancé, age 20 + daughter, age 1
 06	Luis Mancheno	Immigration Lawyer, refugee from Ecuador		cv1hkj1kq8	"K."	age: 16
 07	Saheem Ali	Theater Director, Kenyan immigrant		hzdlb8yh68	"L."	age: 17
@@ -20,8 +20,8 @@ number	reader	readerTitle	readerLink	wistiaId	declarationName	declarationInfo
 33	Heather Yvonne Axford	Legal Director, Central American Legal Assistance		wuy6mqyjlj	"O"	age: 17, with son, age 6 months
 35	Sakina Jaffrey	Actor		f26fj1vkfw	"W."	age: unknown, with two nephews
 38	Rabbi Joshua Stanton	East End Temple		qav57yff35	"E."	age: unknown, with niece
-40	Kerri Kelly	Founder, CTZNWELL		26rjpjig4p	"A."	age: 17, with infant daughter
-41	Modesto Flako Jimenez	Performance Artist		nvdzap81o9	"A."	age: 15, with brothers, ages 11 + 19
+40	Kerri Kelly	Founder, CTZNWELL		26rjpjig4p	"A."	age: 17, with infant daughter  
+41	Modesto Flako Jimenez	Performance Artist		nvdzap81o9	"A."	age: 15, with brothers, ages 11 + 19  
 43	Sahr Ngaujah	Artist		z5sn0um1r0	"A."	age: 14, with mother, sister, and niece, ages unknown
 44	Rev. Micah Bucey	Judson Memorial Church		5j0ppfwluj	"A."	age: 11, with twin brother + sister, age 19
 45	Mahsa Kasraie	Digital Consultant, Iranian immigrant		vphdaa4dvu	"C."	age: unknown, with husband + son, age 1
@@ -34,10 +34,11 @@ number	reader	readerTitle	readerLink	wistiaId	declarationName	declarationInfo
 54	Elizabeth Lamb	Immigration Judge (retired)		ahdt1zlwkz	"K."	age: 14, with sister, age 18
 55	Alfred Kahn and Jillian Crane	Founder + President of First Responders Children's Foundation		oj655lbc46	"K."	age: 15, with brother, age 13
 56	Clint Ramos	Costume and Set Designer, Filipino immigrant		yty7gn7uk6	"L."	age: unknown, with daughter, age 2
-57	Israel Rodriguez Rubio	Law student, granted asylum		ixluypqqv0	"M."	age: 15
-58	Jennifer Gordon and Sophie Steinman-Gordon	Immigration Law Professor + college student 		mrmq5kh04n	"M."	age: 17
+57	Israel Rodriguez Rubio	Law student, granted asylum		ixluypqqv0	"M."	age: 15  
+58	Jennifer Gordon and Sophie Steinman-Gordon	Immigration Law Professor + college student 		mrmq5kh04n	"M."	age: 17  
 59	Roger Chao	Lawyer, pro bono immigration work		pzxj977a8b	"M."	age: 14
 60	Armando Riesco	Actor		7tebro5433	"N."	age: 15, with brother, age 6
-62	Bob Weisel	Assistant Chief Immigration Judge (retired) + Senior Consultant, United Nations High Commissioner for Refugees		zv8yejopy9	"Y"	age: 13
+62	Bob Weisel	Assistant Chief Immigration Judge (retired) + Senior Consultant, United Nations High Commissioner for Refugees		zv8yejopy9	"Y"	age: 13  
 63	Elora Mukherjee	Jerome L. Greene Clinical Professor of Law + Director of Immigrants' Rights Clinic at Columbia Law School		a2iukwkgyo	Elora Mukherjee	Immigration Lawyer
 65	Kevin Jennings	President, Tenement Museum		wnuigo29dc	"M."	age: unknown
+69	Warren Binford	Professor of Law and Director of Clinical Law Program, Willamette University		yqt0hg6uzv	Warren Binford	Lawyer
